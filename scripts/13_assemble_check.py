@@ -27,7 +27,7 @@ Values are median (IQR) or n/N (%). Denominators exclude missing values. The da 
 
 {T2}
 
-Values are median (IQR) or n/N (%). Phases are the surgeon's case numbers on Versius and on the da Vinci restart. Denominators exclude missing values. Clavien-Dindo grades below III are not shown because the registry stopped recording them routinely in 2024. Grades are as recorded in the registry, and two of the six Versius reoperations carried a grade below III. Blood loss was mostly recorded as rounded estimates and is shown descriptively. PSA persistence includes men operated at least 56 days before data close. Continence at 3 and 12 months includes men operated at least 120 and 425 days before data close, respectively. A dash marks a phase in which no patient had reached the 12-month window.
+Values are median (IQR) or n/N (%). Phases are the surgeon's case numbers on Versius and on the da Vinci restart. Denominators exclude missing values. Clavien-Dindo grades below III are not shown because the registry stopped recording them routinely in 2024. Grades are as recorded in the registry. Of the six Versius reoperations, one was a planned oncological procedure and one had no recorded indication and a grade below III. Blood loss was mostly recorded as rounded estimates and is shown descriptively. PSA persistence includes men operated at least 56 days before data close. Continence at 3 and 12 months includes men operated at least 120 and 425 days before data close, respectively. A dash marks a phase in which no patient had reached the 12-month window.
 
 **Table 3.** Positive surgical margins by hospital, robot and calendar period.
 

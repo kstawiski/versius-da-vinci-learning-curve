@@ -105,7 +105,7 @@ need('overlap time', f"{oo['estimate']:.1f} min longer (95% CI {m(oo['ci95'][0])
 ga = ovl['grade_available']
 need('grades', f"recorded for {ga['Versius'][0]} of {ga['Versius'][1]} Versius operations ({round(100*ga['Versius'][0]/ga['Versius'][1])}%) and {ga['restart'][0]} of {ga['restart'][1]} restart operations ({round(100*ga['restart'][0]/ga['restart'][1])}%)")
 need('readmission ascertained', f"among {ga['Versius'][4]} Versius and {ga['restart'][4]} restart operations with readmission records")
-need('reop graded below III', f"two of them graded below III" if ga['Versius'][3] == 2 else "MISMATCH")
+need('reop graded below III', "one was a planned oncological procedure and one had no recorded indication and a registry grade below III" if ga['Versius'][3] == 2 else "MISMATCH")
 f24 = ovl['functional_2024']
 need('pad 12m recorded 2024', f"after {f24['Versius']['pad_free_12m'][0]} of {f24['Versius']['pad_free_12m'][1]} Versius and {f24['restart']['pad_free_12m'][0]} of {f24['restart']['pad_free_12m'][1]} restart operations")
 need('plateau non-attainment', f"not met in {pl['Versius or']['boot_primary']['n_not_reached'] if 'n_not_reached' in pl['Versius or']['boot_primary'] else 790} of 2000 bootstrap replicates")

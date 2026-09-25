@@ -25,8 +25,8 @@ Rscript scripts/05_fig2_curves.R
 Rscript scripts/05_fig3_contrasts.R
 Rscript scripts/05_figS_cusum.R
 if [ -d manuscript ]; then  # manuscript assembly, only inside the manuscript workspace
-  python3 scripts/13_assemble_check.py manuscript/MANUSCRIPT_v12.md manuscript/MANUSCRIPT_v12_assembled.md
-  python3 scripts/14_verify_numbers.py manuscript/MANUSCRIPT_v12_assembled.md | tail -1
-  python3 scripts/17_assemble_supplement.py manuscript/SUPPLEMENT_v5_source.md manuscript/SUPPLEMENT_v5.md
+  python3 scripts/13_assemble_check.py manuscript/MANUSCRIPT_v13.md manuscript/MANUSCRIPT_v13_assembled.md
+  python3 scripts/14_verify_numbers.py manuscript/MANUSCRIPT_v13_assembled.md | tail -1
+  python3 scripts/17_assemble_supplement.py manuscript/SUPPLEMENT_v6_source.md manuscript/SUPPLEMENT_v6.md
 fi
 echo PIPELINE_COMPLETE
