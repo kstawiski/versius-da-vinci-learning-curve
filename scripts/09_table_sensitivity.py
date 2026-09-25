@@ -23,7 +23,7 @@ def segtext(k):
     x = sg[k]
     return (f"case {f(x['breakpoint'], 1)} (bootstrap 95% CI {f(x['boot_ci95'][0])}–{f(x['boot_ci95'][1])}, {x['boot_n_failed']} of "
             f"{x['boot_n_ok'] + x['boot_n_failed']} fits failed). {f(x['slope_before_pct_per10'], 1)}% per 10 cases before (95% CI {f(x['slope_before_ci95'][0], 1)} to {f(x['slope_before_ci95'][1], 1)}), "
-            f"{f(x['slope_after_pct_per10'], 2)}% after (95% CI {f(x['slope_after_ci95'][0], 2)} to {f(x['slope_after_ci95'][1], 2)}). Davies test P {'<0.001' if dav[k]['davies_p_max'] < 0.001 else round(dav[k]['davies_p_max'], 3)} in every imputation")
+            f"{f(x['slope_after_pct_per10'], 2)}% after (95% CI {f(x['slope_after_ci95'][0], 2)} to {f(x['slope_after_ci95'][1], 2)}). Davies test P {'< 0.001' if dav[k]['davies_p_max'] < 0.001 else '= ' + str(round(dav[k]['davies_p_max'], 3))} in every imputation")
 rows.append(('Segmented regression, adjusted, pooled over 20 imputations', segtext('Versius'), segtext('dVrestart')))
 rows.append(('Segmented regression, unadjusted', f"case {f(sg['Versius_unadjusted']['breakpoint'], 1)}", f"case {f(sg['dVrestart_unadjusted']['breakpoint'], 1)}"))
 pv, pd_ = ph['Versius'], ph['dVrestart']

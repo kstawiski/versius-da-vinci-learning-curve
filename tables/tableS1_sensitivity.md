@@ -2,7 +2,7 @@
 |---|---|---|
 | Prespecified plateau rule, operative time within 15 min of the final-50-case mean | case 111 (95% CI 34 to not reached; rule not met in 790 of 2000 replicates) | case 182 (95% CI 27 to 312; rule not met in 44 of 2000 replicates), marking the end of a transient rise |
 | Plateau rule, 10 min | not reached | case 196 |
-| Segmented regression, adjusted, pooled over 20 imputations | case 21.6 (bootstrap 95% CI 19–30, 26 of 500 fits failed). −30.1% per 10 cases before (95% CI −41.0 to −17.1), −0.31% after (95% CI −0.60 to −0.03). Davies test P <0.001 in every imputation | case 124.4 (bootstrap 95% CI 16–140, 11 of 500 fits failed). 1.9% per 10 cases before (95% CI 0.8 to 3.0), −0.65% after (95% CI −0.99 to −0.31). Davies test P <0.001 in every imputation |
+| Segmented regression, adjusted, pooled over 20 imputations | case 21.6 (bootstrap 95% CI 19–30, 26 of 500 fits failed). −30.1% per 10 cases before (95% CI −41.0 to −17.1), −0.31% after (95% CI −0.60 to −0.03). Davies test P < 0.001 in every imputation | case 124.4 (bootstrap 95% CI 16–140, 11 of 500 fits failed). 1.9% per 10 cases before (95% CI 0.8 to 3.0), −0.65% after (95% CI −0.99 to −0.31). Davies test P < 0.001 in every imputation |
 | Segmented regression, unadjusted | case 46.0 | case 114.0 |
 | Post hoc, case by which 80% of the initial improvement was reached | case 33 (95% CI 24–117), total improvement 130 min (95% CI 62–191) | no initial learning phase, total improvement 0.9 min (95% CI −22 to 34) |
 | Restricted cubic splines instead of penalized spline | 226 min at case 1, 191 at case 50, 168 at case 100 | 139 min at case 1, 157 at case 50 |

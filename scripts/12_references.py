@@ -31,7 +31,7 @@ for i, k in enumerate(ORDER, 1):
     if vol: loc += f";{vol}"
     if iss: loc += f"({iss})"
     if pg: loc += f":{pg}"
-    ref = f"{auth}. {title}. {jn} {loc}. doi:{d}"
+    ref = f"{auth}. {title}. {jn} {loc}." + ("" if vol else " Epub ahead of print.") + f" doi:{d}"
     out.append({'n': i, 'key': k, 'doi': d, 'reference': ref})
     lines.append(f"{i}. {ref}")
     time.sleep(0.2)
