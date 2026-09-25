@@ -1,0 +1,102 @@
+{
+  "label": "Sparse binary contrasts: Firth logistic, adjusted for age, log PSA and hospital; marginal risk difference, da Vinci minus Versius",
+  "A4 psa_persistence_eau": {
+    "outcome": "psa_persistence_eau",
+    "events_ref": 3,
+    "n_ref": 28,
+    "events_cmp": 3,
+    "n_cmp": 58,
+    "sparse_rule_applies": true,
+    "rd": -0.066967,
+    "ci95": [-0.195512, 0.061578],
+    "ci90": [-0.174845, 0.040912],
+    "p": 0.307226
+  },
+  "A4 pad_free_3m": {
+    "outcome": "pad_free_3m",
+    "events_ref": 4,
+    "n_ref": 31,
+    "events_cmp": 10,
+    "n_cmp": 51,
+    "sparse_rule_applies": true,
+    "rd": -0.041318,
+    "ci95": [-0.250939, 0.168302],
+    "ci90": [-0.217237, 0.134601],
+    "p": 0.699254
+  },
+  "A4 pad_free_12m": {
+    "outcome": "pad_free_12m",
+    "events_ref": 9,
+    "n_ref": 18,
+    "events_cmp": 22,
+    "n_cmp": 42,
+    "sparse_rule_applies": true,
+    "rd": -0.123495,
+    "ci95": [-0.402043, 0.155053],
+    "ci90": [-0.35726, 0.11027],
+    "p": 0.384871
+  },
+  "A4 readmission_30d": {
+    "outcome": "readmission_30d",
+    "events_ref": 0,
+    "n_ref": 58,
+    "events_cmp": 0,
+    "n_cmp": 82,
+    "note": "no events in either group; crude only"
+  },
+  "A4 psm": {
+    "outcome": "psm",
+    "events_ref": 31,
+    "n_ref": 96,
+    "events_cmp": 43,
+    "n_cmp": 103,
+    "sparse_rule_applies": false,
+    "note": "sparse rule does not apply; the full-model estimate is authoritative"
+  },
+  "B1 psa_persistence_eau": {
+    "outcome": "psa_persistence_eau",
+    "events_ref": 10,
+    "n_ref": 97,
+    "events_cmp": 11,
+    "n_cmp": 84,
+    "sparse_rule_applies": false,
+    "note": "sparse rule does not apply; the full-model estimate is authoritative"
+  },
+  "B1 pad_free_3m": {
+    "outcome": "pad_free_3m",
+    "events_ref": 9,
+    "n_ref": 96,
+    "events_cmp": 14,
+    "n_cmp": 52,
+    "sparse_rule_applies": true,
+    "rd": 0.173375,
+    "ci95": [0.039687, 0.307064],
+    "ci90": [0.06118, 0.28557],
+    "p": 0.011029
+  },
+  "B1 pad_free_12m": {
+    "outcome": "pad_free_12m",
+    "events_ref": 21,
+    "n_ref": 52,
+    "events_cmp": "NA",
+    "n_cmp": "NA",
+    "note": "group too small or absent"
+  },
+  "B1 readmission_30d": {
+    "outcome": "readmission_30d",
+    "events_ref": 0,
+    "n_ref": 156,
+    "events_cmp": 0,
+    "n_cmp": 106,
+    "note": "no events in either group; crude only"
+  },
+  "B1 psm": {
+    "outcome": "psm",
+    "events_ref": 55,
+    "n_ref": 219,
+    "events_cmp": 56,
+    "n_cmp": 192,
+    "sparse_rule_applies": false,
+    "note": "sparse rule does not apply; the full-model estimate is authoritative"
+  }
+}

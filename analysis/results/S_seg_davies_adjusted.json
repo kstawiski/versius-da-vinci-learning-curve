@@ -1,0 +1,12 @@
+{
+  "Versius": {
+    "davies_p_median": 1.56159962e-08,
+    "davies_p_max": 5.15496918e-08,
+    "n": 20
+  },
+  "dVrestart": {
+    "davies_p_median": 0.00003972,
+    "davies_p_max": 0.00006159,
+    "n": 20
+  }
+}

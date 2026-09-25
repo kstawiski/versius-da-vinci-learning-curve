@@ -1,0 +1,578 @@
+{
+  "A3": {
+    "a_or": {
+      "label": "A3a dV restart 1-100 vs Versius 1-100, operative time (min)",
+      "outcome": "or_time",
+      "estimate": -33.456757,
+      "se": 7.891025,
+      "ci95": [-48.922966, -17.990548],
+      "ci90": [-46.436393, -20.477122],
+      "p": 0.000022,
+      "n_ref": 98,
+      "n_cmp": 100,
+      "crude_ref": 190.571429,
+      "crude_cmp": 150.49,
+      "median_ref": 185,
+      "median_cmp": 147.5,
+      "eq_margin": 15,
+      "equivalent": false
+    },
+    "a_psm_pt2": {
+      "label": "A3a dV restart 1-100 vs Versius 1-100, pT2 PSM (RD)",
+      "outcome": "psm",
+      "estimate": 0.208408,
+      "se": 0.095596,
+      "ci95": [0.021043, 0.395772],
+      "ci90": [0.051166, 0.365649],
+      "p": 0.029251,
+      "or": 2.917162,
+      "events_ref": 11,
+      "events_cmp": 23,
+      "n_ref": 49,
+      "n_cmp": 59,
+      "crude_ref": 0.22449,
+      "crude_cmp": 0.389831,
+      "eq_margin": 0.1,
+      "equivalent": false
+    },
+    "a_psm_all": {
+      "label": "A3a dV restart 1-100 vs Versius 1-100, PSM all stages (RD)",
+      "outcome": "psm",
+      "estimate": 0.054461,
+      "se": 0.071945,
+      "ci95": [-0.086549, 0.195472],
+      "ci90": [-0.063879, 0.172801],
+      "p": 0.449061,
+      "or": 1.307719,
+      "events_ref": 36,
+      "events_cmp": 41,
+      "n_ref": 98,
+      "n_cmp": 98,
+      "crude_ref": 0.367347,
+      "crude_cmp": 0.418367
+    },
+    "slopes_first50": [
+      {
+        "term": "case1_diff_min",
+        "est": -106.323771,
+        "ci95": [-141.319177, -71.328365],
+        "p": 2.605058e-09
+      },
+      {
+        "term": "slope_versius_per10",
+        "est": -15.922135,
+        "ci95": [-26.354719, -5.48955],
+        "p": 0.002778
+      },
+      {
+        "term": "slope_dvrestart_per10",
+        "est": -10.33869,
+        "ci95": [-18.050409, -2.626971],
+        "p": 0.008599
+      },
+      {
+        "term": "slope_diff_per10",
+        "est": 5.583445,
+        "ci95": [-6.644833, 17.811722],
+        "p": 0.370829
+      }
+    ],
+    "c": {
+      "aic_cumulative": -167.711245,
+      "aic_platform": -185.248595,
+      "aic_both": -187.456982,
+      "dev_cumulative": 0.403085,
+      "dev_platform": 0.428635,
+      "dev_both": 0.429961,
+      "p_platform_given_cumulative": 0.0001,
+      "p_cumulative_given_platform": "NA"
+    }
+  },
+  "A4": {
+    "or_time": {
+      "label": "A4 2024 dV restart vs Versius, operative time (min)",
+      "outcome": "or_time",
+      "estimate": 6.50584,
+      "se": 5.563104,
+      "ci95": [-4.397657, 17.409337],
+      "ci90": [-2.64466, 15.65634],
+      "p": 0.242218,
+      "n_ref": 99,
+      "n_cmp": 105,
+      "crude_ref": 174.989899,
+      "crude_cmp": 152.180952,
+      "median_ref": 170,
+      "median_cmp": 150,
+      "eq_margin": 15,
+      "equivalent": false
+    },
+    "psm_pt2": {
+      "label": "A4 2024 dV restart vs Versius, pT2 PSM (RD)",
+      "outcome": "psm",
+      "estimate": 0.083822,
+      "se": 0.101153,
+      "ci95": [-0.114436, 0.282079],
+      "ci90": [-0.082561, 0.250204],
+      "p": 0.407298,
+      "or": 1.539288,
+      "events_ref": 14,
+      "events_cmp": 23,
+      "n_ref": 48,
+      "n_cmp": 61,
+      "crude_ref": 0.291667,
+      "crude_cmp": 0.377049,
+      "eq_margin": 0.1,
+      "equivalent": false
+    },
+    "psm_all": {
+      "label": "A4 2024 dV restart vs Versius, PSM all stages (RD)",
+      "outcome": "psm",
+      "estimate": 0.067717,
+      "se": 0.077813,
+      "ci95": [-0.084794, 0.220228],
+      "ci90": [-0.060275, 0.195708],
+      "p": 0.384165,
+      "or": 1.388781,
+      "events_ref": 31,
+      "events_cmp": 43,
+      "n_ref": 96,
+      "n_cmp": 103,
+      "crude_ref": 0.322917,
+      "crude_cmp": 0.417476
+    },
+    "los": {
+      "label": "A4 2024 dV restart vs Versius, length of stay (days)",
+      "outcome": "los",
+      "estimate": 0.207121,
+      "se": 0.130548,
+      "ci95": [-0.04875, 0.462991],
+      "ci90": [-0.007612, 0.421854],
+      "p": 0.112616,
+      "n_ref": 99,
+      "n_cmp": 105,
+      "crude_ref": 4.505051,
+      "crude_cmp": 4.247619,
+      "median_ref": 4,
+      "median_cmp": 4
+    },
+    "ebl": {
+      "label": "A4 2024 dV restart vs Versius, estimated blood loss (mL)",
+      "outcome": "ebl",
+      "estimate": -52.958378,
+      "se": 22.412546,
+      "ci95": [-96.886213, -9.030543],
+      "ci90": [-89.823769, -16.092987],
+      "p": 0.018133,
+      "n_ref": 99,
+      "n_cmp": 102,
+      "crude_ref": 339.89899,
+      "crude_cmp": 353.431373,
+      "median_ref": 400,
+      "median_cmp": 400
+    },
+    "readmission_30d": {
+      "label": "A4 2024 dV restart vs Versius, 30-day readmission (RD)",
+      "outcome": "readmission_30d",
+      "not_estimable": true,
+      "n_ref": 58,
+      "n_cmp": 82
+    },
+    "psa_persistence_eau": {
+      "label": "A4 2024 dV restart vs Versius, EAU PSA persistence (RD)",
+      "outcome": "psa_persistence_eau",
+      "estimate": -0.093712,
+      "se": 0.002901,
+      "ci95": [-0.099763, -0.08766],
+      "ci90": [-0.098715, -0.088708],
+      "p": 1.042787e-18,
+      "or": 1.1257e-21,
+      "events_ref": 3,
+      "events_cmp": 3,
+      "n_ref": 28,
+      "n_cmp": 58,
+      "crude_ref": 0.107143,
+      "crude_cmp": 0.051724
+    },
+    "pad_free_3m": {
+      "label": "A4 2024 dV restart vs Versius, pad-free 3 months (RD)",
+      "outcome": "pad_free_3m",
+      "estimate": -0.044945,
+      "se": 0.098005,
+      "ci95": [-0.237032, 0.147143],
+      "ci90": [-0.20615, 0.11626],
+      "p": 0.646525,
+      "or": 0.704104,
+      "events_ref": 4,
+      "events_cmp": 10,
+      "n_ref": 31,
+      "n_cmp": 51,
+      "crude_ref": 0.129032,
+      "crude_cmp": 0.196078
+    },
+    "pad_free_12m": {
+      "label": "A4 2024 dV restart vs Versius, pad-free 12 months (RD)",
+      "outcome": "pad_free_12m",
+      "estimate": -0.107643,
+      "se": 0.183707,
+      "ci95": [-0.467703, 0.252417],
+      "ci90": [-0.409815, 0.194529],
+      "p": 0.55791,
+      "or": 0.583971,
+      "events_ref": 9,
+      "events_cmp": 22,
+      "n_ref": 18,
+      "n_cmp": 42,
+      "crude_ref": 0.5,
+      "crude_cmp": 0.52381
+    },
+    "rare": {
+      "major_cd_any ref": {
+        "outcome": "major_cd_any",
+        "group": "ref",
+        "events": 1,
+        "n": 55,
+        "n_missing": 44,
+        "ci95": [0.00046, 0.097191]
+      },
+      "major_cd_any cmp": {
+        "outcome": "major_cd_any",
+        "group": "cmp",
+        "events": 0,
+        "n": 68,
+        "n_missing": 37,
+        "ci95": [0, 0.052803]
+      },
+      "reoperation ref": {
+        "outcome": "reoperation",
+        "group": "ref",
+        "events": 0,
+        "n": 99,
+        "n_missing": 0,
+        "ci95": [0, 0.036576]
+      },
+      "reoperation cmp": {
+        "outcome": "reoperation",
+        "group": "cmp",
+        "events": 0,
+        "n": 105,
+        "n_missing": 0,
+        "ci95": [0, 0.034522]
+      },
+      "urine_leak ref": {
+        "outcome": "urine_leak",
+        "group": "ref",
+        "events": 0,
+        "n": 99,
+        "n_missing": 0,
+        "ci95": [0, 0.036576]
+      },
+      "urine_leak cmp": {
+        "outcome": "urine_leak",
+        "group": "cmp",
+        "events": 0,
+        "n": 105,
+        "n_missing": 0,
+        "ci95": [0, 0.034522]
+      },
+      "transfusion_30d ref": {
+        "outcome": "transfusion_30d",
+        "group": "ref",
+        "events": 0,
+        "n": 57,
+        "n_missing": 42,
+        "ci95": [0, 0.062667]
+      },
+      "transfusion_30d cmp": {
+        "outcome": "transfusion_30d",
+        "group": "cmp",
+        "events": 4,
+        "n": 79,
+        "n_missing": 26,
+        "ci95": [0.013966, 0.124595]
+      }
+    },
+    "observation": {
+      "pad_free_3m": [
+        [99, 105],
+        [31, 51]
+      ],
+      "pad_free_12m": [
+        [99, 105],
+        [18, 42]
+      ],
+      "psa_persistence_eau": [
+        [99, 105],
+        [28, 58]
+      ]
+    },
+    "calendar_adjusted": {
+      "or_time": {
+        "label": "A4cal operative time (min)",
+        "outcome": "or_time",
+        "estimate": 9.425255,
+        "se": 7.259973,
+        "ci95": [-4.804049, 23.654558],
+        "ci90": [-2.51635, 21.366859],
+        "p": 0.194202,
+        "n_ref": 99,
+        "n_cmp": 105,
+        "crude_ref": 174.989899,
+        "crude_cmp": 152.180952,
+        "median_ref": 170,
+        "median_cmp": 150,
+        "eq_margin": 15,
+        "equivalent": false
+      },
+      "psm_pt2": {
+        "label": "A4cal pT2 PSM (RD)",
+        "outcome": "psm",
+        "estimate": 0.041885,
+        "se": 0.149396,
+        "ci95": [-0.250927, 0.334696],
+        "ci90": [-0.203851, 0.28762],
+        "p": 0.779202,
+        "or": 1.251356,
+        "events_ref": 14,
+        "events_cmp": 23,
+        "n_ref": 48,
+        "n_cmp": 61,
+        "crude_ref": 0.291667,
+        "crude_cmp": 0.377049,
+        "eq_margin": 0.1,
+        "equivalent": false
+      },
+      "psm_all": {
+        "label": "A4cal PSM all (RD)",
+        "outcome": "psm",
+        "estimate": 0.082898,
+        "se": 0.121947,
+        "ci95": [-0.156113, 0.321909],
+        "ci90": [-0.117686, 0.283483],
+        "p": 0.496638,
+        "or": 1.525676,
+        "events_ref": 31,
+        "events_cmp": 43,
+        "n_ref": 96,
+        "n_cmp": 103,
+        "crude_ref": 0.322917,
+        "crude_cmp": 0.417476
+      }
+    }
+  },
+  "B1": {
+    "or_time": {
+      "label": "B1 mature dV restart vs mature Versius, operative time (min)",
+      "outcome": "or_time",
+      "estimate": -5.060507,
+      "se": 3.54665,
+      "ci95": [-12.011822, 1.890808],
+      "ci90": [-10.894233, 0.773219],
+      "p": 0.153626,
+      "n_ref": 226,
+      "n_cmp": 200,
+      "crude_ref": 167.995575,
+      "crude_cmp": 159.115,
+      "median_ref": 165,
+      "median_cmp": 155,
+      "eq_margin": 15,
+      "equivalent": true
+    },
+    "psm_pt2": {
+      "label": "B1 mature dV restart vs mature Versius, pT2 PSM (RD)",
+      "outcome": "psm",
+      "estimate": -0.002812,
+      "se": 0.049729,
+      "ci95": [-0.10028, 0.094656],
+      "ci90": [-0.084609, 0.078986],
+      "p": 0.954911,
+      "or": 0.986889,
+      "events_ref": 24,
+      "events_cmp": 26,
+      "n_ref": 126,
+      "n_cmp": 123,
+      "crude_ref": 0.190476,
+      "crude_cmp": 0.211382,
+      "eq_margin": 0.1,
+      "equivalent": true
+    },
+    "psm_all": {
+      "label": "B1 mature dV restart vs mature Versius, PSM all stages (RD)",
+      "outcome": "psm",
+      "estimate": 0.038743,
+      "se": 0.04168,
+      "ci95": [-0.04295, 0.120437],
+      "ci90": [-0.029815, 0.107302],
+      "p": 0.352613,
+      "or": 1.253815,
+      "events_ref": 55,
+      "events_cmp": 56,
+      "n_ref": 219,
+      "n_cmp": 192,
+      "crude_ref": 0.251142,
+      "crude_cmp": 0.291667
+    },
+    "los": {
+      "label": "B1 mature dV restart vs mature Versius, length of stay (days)",
+      "outcome": "los",
+      "estimate": -0.082922,
+      "se": 0.10535,
+      "ci95": [-0.289405, 0.123561],
+      "ci90": [-0.256207, 0.090364],
+      "p": 0.43122,
+      "n_ref": 226,
+      "n_cmp": 200,
+      "crude_ref": 4.433628,
+      "crude_cmp": 4.31,
+      "median_ref": 4,
+      "median_cmp": 4
+    },
+    "ebl": {
+      "label": "B1 mature dV restart vs mature Versius, estimated blood loss (mL)",
+      "outcome": "ebl",
+      "estimate": -179.703502,
+      "se": 9.888051,
+      "ci95": [-199.083755, -160.323249],
+      "ci90": [-195.967917, -163.439087],
+      "p": 8.604381e-74,
+      "n_ref": 215,
+      "n_cmp": 196,
+      "crude_ref": 382.093023,
+      "crude_cmp": 202.55102,
+      "median_ref": 400,
+      "median_cmp": 200
+    },
+    "readmission_30d": {
+      "label": "B1 mature dV restart vs mature Versius, 30-day readmission (RD)",
+      "outcome": "readmission_30d",
+      "not_estimable": true,
+      "n_ref": 156,
+      "n_cmp": 106
+    },
+    "psa_persistence_eau": {
+      "label": "B1 mature dV restart vs mature Versius, EAU PSA persistence (RD)",
+      "outcome": "psa_persistence_eau",
+      "estimate": 0.055105,
+      "se": 0.046769,
+      "ci95": [-0.03656, 0.146771],
+      "ci90": [-0.021823, 0.132034],
+      "p": 0.238697,
+      "or": 2.110372,
+      "events_ref": 10,
+      "events_cmp": 11,
+      "n_ref": 97,
+      "n_cmp": 84,
+      "crude_ref": 0.103093,
+      "crude_cmp": 0.130952
+    },
+    "pad_free_3m": {
+      "label": "B1 mature dV restart vs mature Versius, pad-free 3 months (RD)",
+      "outcome": "pad_free_3m",
+      "estimate": 0.181218,
+      "se": 0.064789,
+      "ci95": [0.054234, 0.308202],
+      "ci90": [0.074649, 0.287786],
+      "p": 0.005157,
+      "or": 3.9087,
+      "events_ref": 9,
+      "events_cmp": 14,
+      "n_ref": 96,
+      "n_cmp": 52,
+      "crude_ref": 0.09375,
+      "crude_cmp": 0.269231
+    },
+    "pad_free_12m": {
+      "label": "B1 mature dV restart vs mature Versius, pad-free 12 months (RD)",
+      "outcome": "pad_free_12m",
+      "not_estimable": true,
+      "n_ref": 52,
+      "n_cmp": 0
+    },
+    "rare": {
+      "major_cd_any ref": {
+        "outcome": "major_cd_any",
+        "group": "ref",
+        "events": 2,
+        "n": 181,
+        "n_missing": 45,
+        "ci95": [0.001341, 0.039343]
+      },
+      "major_cd_any cmp": {
+        "outcome": "major_cd_any",
+        "group": "cmp",
+        "events": 0,
+        "n": 105,
+        "n_missing": 95,
+        "ci95": [0, 0.034522]
+      },
+      "reoperation ref": {
+        "outcome": "reoperation",
+        "group": "ref",
+        "events": 2,
+        "n": 175,
+        "n_missing": 51,
+        "ci95": [0.001387, 0.040672]
+      },
+      "reoperation cmp": {
+        "outcome": "reoperation",
+        "group": "cmp",
+        "events": 0,
+        "n": 200,
+        "n_missing": 0,
+        "ci95": [0, 0.018275]
+      },
+      "urine_leak ref": {
+        "outcome": "urine_leak",
+        "group": "ref",
+        "events": 1,
+        "n": 226,
+        "n_missing": 0,
+        "ci95": [0.000112, 0.024405]
+      },
+      "urine_leak cmp": {
+        "outcome": "urine_leak",
+        "group": "cmp",
+        "events": 0,
+        "n": 191,
+        "n_missing": 9,
+        "ci95": [0, 0.019128]
+      },
+      "transfusion_30d ref": {
+        "outcome": "transfusion_30d",
+        "group": "ref",
+        "events": 1,
+        "n": 153,
+        "n_missing": 73,
+        "ci95": [0.000165, 0.035877]
+      },
+      "transfusion_30d cmp": {
+        "outcome": "transfusion_30d",
+        "group": "cmp",
+        "events": 3,
+        "n": 106,
+        "n_missing": 94,
+        "ci95": [0.005875, 0.080487]
+      }
+    },
+    "observation": {
+      "pad_free_3m": [
+        [226, 164],
+        [96, 52]
+      ],
+      "pad_free_12m": [
+        [226, 0],
+        [52, 0]
+      ],
+      "psa_persistence_eau": [
+        [226, 192],
+        [97, 84]
+      ]
+    },
+    "definitions": {
+      "versius_after": 111,
+      "dv_restart_after": 182
+    }
+  },
+  "data_close_days_after_last_surgery": 39,
+  "n_imputations": 20,
+  "n_bootstrap": 2000
+}

@@ -1,0 +1,471 @@
+{
+  "S_rcs": {
+    "Versius_or": {
+      "nstar": 80,
+      "nstar10": 265,
+      "asym": 160.581313,
+      "case1": 225.894083,
+      "case50": 191.099439,
+      "case100": 168.171393,
+      "last": 154.94857
+    },
+    "Versius_psm": {
+      "nstar": null,
+      "nstar10": null,
+      "asym": 0.373467,
+      "case1": 0.23005,
+      "case50": 0.175027,
+      "case100": 0.135887,
+      "last": 0.443499
+    },
+    "dVrestart_or": {
+      "nstar": 169,
+      "nstar10": 193,
+      "asym": 158.205941,
+      "case1": 138.908975,
+      "case50": 156.615612,
+      "case100": 172.102471,
+      "last": 160.574891
+    },
+    "dVrestart_psm": {
+      "nstar": 93,
+      "nstar10": null,
+      "asym": 0.286008,
+      "case1": 0.461991,
+      "case50": 0.391992,
+      "case100": 0.326849,
+      "last": 0.296644
+    }
+  },
+  "S_noNSLND": {
+    "Versius_or": {
+      "nstar": 108,
+      "nstar10": null,
+      "asym": 160.051592,
+      "case1": 288.943267,
+      "case50": 169.328551,
+      "case100": 177.435635,
+      "last": 145.905318
+    },
+    "dVrestart_or": {
+      "nstar": 179,
+      "nstar10": 194,
+      "asym": 157.159548,
+      "case1": 159.205046,
+      "case50": 144.741932,
+      "case100": 174.491877,
+      "last": 153.421784
+    }
+  },
+  "S_NS": {
+    "Versius_psm": {
+      "nstar": 284,
+      "nstar10": null,
+      "asym": 0.336268,
+      "case1": 0.207518,
+      "case50": 0.164035,
+      "case100": 0.137039,
+      "last": 0.380382
+    },
+    "dVrestart_psm": {
+      "nstar": null,
+      "nstar10": null,
+      "asym": 0.341822,
+      "case1": 0.310701,
+      "case50": 0.380371,
+      "case100": 0.400018,
+      "last": 0.404199
+    }
+  },
+  "S_dvall": {
+    "or": {
+      "nstar": 201,
+      "nstar10": 212,
+      "asym": 157.997481,
+      "case1": 279.716073,
+      "case50": 136.288991,
+      "case100": 167.399907,
+      "last": 151.789569
+    },
+    "psm": {
+      "nstar": null,
+      "nstar10": null,
+      "asym": 0.325698,
+      "case1": 0.402639,
+      "case50": 0.40607,
+      "case100": 0.390349,
+      "last": 0.377939
+    }
+  },
+  "S_cc": {
+    "n_complete": 573,
+    "Versius_or": {
+      "nstar": 182,
+      "nstar10": null,
+      "asym": 164.24228,
+      "case1": 280.973389,
+      "case50": 169.656442,
+      "case100": 180.319641,
+      "last": 152.118034
+    },
+    "Versius_psm": {
+      "nstar": 279,
+      "nstar10": null,
+      "asym": 0.29473,
+      "case1": 0.21838,
+      "case50": 0.176527,
+      "case100": 0.147583,
+      "last": 0.333046
+    },
+    "dVrestart_or": {
+      "nstar": 224,
+      "nstar10": 248,
+      "asym": 152.591947,
+      "case1": 159.797895,
+      "case50": 139.250027,
+      "case100": 176.714838,
+      "last": 147.131586
+    },
+    "dVrestart_psm": {
+      "nstar": null,
+      "nstar10": null,
+      "asym": 0.603771,
+      "case1": 0.11985,
+      "case50": 0.25667,
+      "case100": 0.403941,
+      "last": 0.749712
+    },
+    "A3a_or": {
+      "label": "cc A3a or",
+      "outcome": "or_time",
+      "estimate": -31.772854,
+      "se": 10.555334,
+      "ci95": [-52.460954, -11.084754],
+      "ci90": [-49.13485, -14.410858],
+      "p": 0.002611,
+      "n_ref": 73,
+      "n_cmp": 96,
+      "crude_ref": 191.479452,
+      "crude_cmp": 149.885417,
+      "median_ref": 185,
+      "median_cmp": 145
+    },
+    "A3a_psm_pt2": {
+      "label": "cc A3a pT2",
+      "outcome": "psm",
+      "estimate": 0.259164,
+      "se": 0.108017,
+      "ci95": [0.047455, 0.470873],
+      "ci90": [0.081492, 0.436835],
+      "p": 0.016427,
+      "or": 4.151215,
+      "events_ref": 8,
+      "events_cmp": 22,
+      "n_ref": 35,
+      "n_cmp": 57,
+      "crude_ref": 0.228571,
+      "crude_cmp": 0.385965
+    },
+    "A4_or": {
+      "label": "cc A4 or",
+      "outcome": "or_time",
+      "estimate": 6.406704,
+      "se": 5.572409,
+      "ci95": [-4.51503, 17.328439],
+      "ci90": [-2.759101, 15.57251],
+      "p": 0.25026,
+      "n_ref": 97,
+      "n_cmp": 101,
+      "crude_ref": 173.680412,
+      "crude_cmp": 151.673267,
+      "median_ref": 170,
+      "median_cmp": 145
+    },
+    "A4_psm_pt2": {
+      "label": "cc A4 pT2",
+      "outcome": "psm",
+      "estimate": 0.092174,
+      "se": 0.101799,
+      "ci95": [-0.107349, 0.291697],
+      "ci90": [-0.075271, 0.259619],
+      "p": 0.365229,
+      "or": 1.604924,
+      "events_ref": 13,
+      "events_cmp": 22,
+      "n_ref": 47,
+      "n_cmp": 59,
+      "crude_ref": 0.276596,
+      "crude_cmp": 0.372881
+    },
+    "A4_psm_all": {
+      "label": "cc A4 all",
+      "outcome": "psm",
+      "estimate": 0.070549,
+      "se": 0.079411,
+      "ci95": [-0.085094, 0.226193],
+      "ci90": [-0.060071, 0.20117],
+      "p": 0.374324,
+      "or": 1.412469,
+      "events_ref": 29,
+      "events_cmp": 41,
+      "n_ref": 94,
+      "n_cmp": 99,
+      "crude_ref": 0.308511,
+      "crude_cmp": 0.414141
+    }
+  },
+  "unadjusted": {
+    "A3a_or": {
+      "label": "unadj A3a or",
+      "outcome": "or_time",
+      "estimate": -35.369753,
+      "se": 8.0833,
+      "ci95": [-51.21275, -19.526756],
+      "ci90": [-48.665611, -22.073895],
+      "p": 0.000012,
+      "n_ref": 98,
+      "n_cmp": 100,
+      "crude_ref": 190.571429,
+      "crude_cmp": 150.49,
+      "median_ref": 185,
+      "median_cmp": 147.5
+    },
+    "A4_or": {
+      "label": "unadj A4 or",
+      "outcome": "or_time",
+      "estimate": 6.008893,
+      "se": 5.964132,
+      "ci95": [-5.680606, 17.698391],
+      "ci90": [-3.801241, 15.819026],
+      "p": 0.313692,
+      "n_ref": 99,
+      "n_cmp": 105,
+      "crude_ref": 174.989899,
+      "crude_cmp": 152.180952,
+      "median_ref": 170,
+      "median_cmp": 150
+    },
+    "A4_psm_pt2": {
+      "label": "unadj A4 pT2",
+      "outcome": "psm",
+      "estimate": 0.08567,
+      "se": 0.110891,
+      "ci95": [-0.131673, 0.303013],
+      "ci90": [-0.09673, 0.26807],
+      "p": 0.439785,
+      "or": 1.471854,
+      "events_ref": 14,
+      "events_cmp": 23,
+      "n_ref": 48,
+      "n_cmp": 61,
+      "crude_ref": 0.291667,
+      "crude_cmp": 0.377049
+    }
+  },
+  "S_seg": {
+    "Versius_unadjusted": {
+      "breakpoint": 46.000009,
+      "breakpoint_se": 8.475874,
+      "davies_p": 5.240819e-06
+    },
+    "Versius": {
+      "n_imputations_fitted": 20,
+      "breakpoint": 21.552943,
+      "breakpoint_rubin_ci95": [15.711309, 27.394576],
+      "slope_before_pct_per10": -30.071193,
+      "slope_before_ci95": [-41.010273, -17.103565],
+      "slope_after_pct_per10": -0.313046,
+      "slope_after_ci95": [-0.597886, -0.027391],
+      "davies_p_median": "NA",
+      "davies_p_max": "-Inf",
+      "boot_ci95": [18.987566, 29.83375],
+      "boot_n_ok": 474,
+      "boot_n_failed": 26
+    },
+    "dVrestart_unadjusted": {
+      "breakpoint": 114.00007,
+      "breakpoint_se": 14.066131,
+      "davies_p": 5.193027e-09
+    },
+    "dVrestart": {
+      "n_imputations_fitted": 20,
+      "breakpoint": 124.370411,
+      "breakpoint_rubin_ci95": [90.85393, 157.886891],
+      "slope_before_pct_per10": 1.904906,
+      "slope_before_ci95": [0.830985, 2.990265],
+      "slope_after_pct_per10": -0.652067,
+      "slope_after_ci95": [-0.991107, -0.311866],
+      "davies_p_median": "NA",
+      "davies_p_max": "-Inf",
+      "boot_ci95": [16.25, 140.083587],
+      "boot_n_ok": 489,
+      "boot_n_failed": 11
+    }
+  },
+  "S_racusum_model": {
+    "n": 711,
+    "events": 228,
+    "auc_apparent": 0.678544,
+    "auc_optimism_corrected": 0.66889,
+    "observed_expected_by_risk_quintile": [
+      {
+        "q5": 1,
+        "observed": 22,
+        "expected": 22.15612,
+        "n": 143
+      },
+      {
+        "q5": 2,
+        "observed": 36,
+        "expected": 32.104605,
+        "n": 142
+      },
+      {
+        "q5": 3,
+        "observed": 39,
+        "expected": 41.917105,
+        "n": 142
+      },
+      {
+        "q5": 4,
+        "observed": 58,
+        "expected": 53.230597,
+        "n": 142
+      },
+      {
+        "q5": 5,
+        "observed": 73,
+        "expected": 78.591573,
+        "n": 142
+      }
+    ],
+    "note": "Calibration slope and intercept on the development sample are identities and are not reported."
+  },
+  "S_cusum": {
+    "Versius": {
+      "peak_case": 95,
+      "n": 335
+    },
+    "Versius_racusum": {
+      "n": 326,
+      "h": 5.345169,
+      "signals": 0,
+      "first_signal_case": null,
+      "observed": 91,
+      "expected": 103.685501,
+      "vlad_final": 12.685501
+    },
+    "Versius_lccusum_pT2": {
+      "n_pT2": 183,
+      "events": 35,
+      "h": 4.412854,
+      "achieved_alpha": 0.05,
+      "achieved_beta": 0.07485,
+      "competence_signal": false,
+      "first_signal_case": null,
+      "pT2_rank_at_signal": null
+    },
+    "dVrestart": {
+      "peak_case": 247,
+      "n": 382
+    },
+    "dVrestart_racusum": {
+      "n": 367,
+      "h": 5.440109,
+      "signals": 0,
+      "first_signal_case": null,
+      "observed": 127,
+      "expected": 117.608478,
+      "vlad_final": -9.391522
+    },
+    "dVrestart_lccusum_pT2": {
+      "n_pT2": 231,
+      "events": 69,
+      "h": 4.738423,
+      "achieved_alpha": 0.0473,
+      "achieved_beta": 0.03775,
+      "competence_signal": false,
+      "first_signal_case": null,
+      "pT2_rank_at_signal": null
+    }
+  },
+  "B2": {
+    "Versius": {
+      "cor": 0.969356,
+      "aic_surgeon": -13.345871,
+      "aic_both": -22.605541,
+      "aic_team": -2.281259,
+      "p_team_given_surgeon": 0.0065,
+      "p_surgeon_given_team": 0.000085,
+      "dev_surgeon": 0.417153,
+      "dev_both": 0.448723
+    },
+    "da Vinci": {
+      "cor": 0.924663,
+      "aic_surgeon": -182.254357,
+      "aic_both": -189.815364,
+      "aic_team": -124.956212,
+      "p_team_given_surgeon": 0.016327,
+      "p_surgeon_given_team": 5.017461e-13,
+      "dev_surgeon": 0.474786,
+      "dev_both": 0.496432
+    },
+    "note": "Surgeon and team case numbers correlate above the prespecified 0.8 limit, so joint-model tests are not reported; hospital-stratified team curves (script 07) are the prespecified display.",
+    "cor_dv_restart_only": 0.913791
+  },
+  "B2_hospital": {
+    "SM": {
+      "n": 128,
+      "first_surgeon_case": 1,
+      "fitted_first": 257.951561,
+      "fitted_last": 145.917502
+    },
+    "BE": {
+      "n": 209,
+      "first_surgeon_case": 16,
+      "fitted_first": 183.800133,
+      "fitted_last": 170.573162
+    }
+  },
+  "B3": {
+    "n_switch": 12,
+    "n_total": 204,
+    "est_min": 1.930765,
+    "ci95": [-15.04498, 18.90651],
+    "p": 0.823598
+  },
+  "S_ties": {
+    "n_blocks": 8,
+    "n_operations_in_blocks": 16,
+    "n_robotic_in_blocks": 4,
+    "n_perm": 200,
+    "Versius_or_nstar_range": [110, 111],
+    "Versius_or_nstar_not_reached": 0,
+    "Versius_psm_nstar_range": [284, 284],
+    "dVrestart_or_nstar_range": [183, 183],
+    "A3a_or_range": [-34.529091, -34.529091]
+  },
+  "B5_ipw": {
+    "pad_free_3m": {
+      "eligible": 204,
+      "observed": 82,
+      "weighted_ref": 0.113779,
+      "weighted_cmp": 0.169135,
+      "weighted_rd": 0.055357
+    },
+    "pad_free_12m": {
+      "eligible": 204,
+      "observed": 60,
+      "weighted_ref": 0.35559,
+      "weighted_cmp": 0.53649,
+      "weighted_rd": 0.180899
+    },
+    "psa_persistence_eau": {
+      "eligible": 204,
+      "observed": 86,
+      "weighted_ref": 0.108178,
+      "weighted_cmp": 0.040183,
+      "weighted_rd": -0.067996
+    }
+  }
+}

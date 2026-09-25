@@ -1,0 +1,77 @@
+{
+  "label": "B1 mature-phase contrasts with plateau cutoffs re-selected in every bootstrap replicate",
+  "n_replicates": 1000,
+  "n_fit_failed": 0,
+  "n_plateau_not_reached": 436,
+  "share_reached": 0.564,
+  "or_time": {
+    "p5": -10.190675,
+    "p95": 8.350857,
+    "p2.5": -12.078626,
+    "p97.5": 10.998531,
+    "share_within_15": 0.98227
+  },
+  "psm_pt2": {
+    "p5": -0.202027,
+    "p95": 0.098159,
+    "p2.5": -0.250828,
+    "p97.5": 0.128639,
+    "share_within_10pts": 0.757092
+  },
+  "cutoffs_versius": [33.075, 163, 288],
+  "cutoffs_restart": [20.975, 185, 288],
+  "posthoc_fixed_cutoff": {
+    "label": "POST HOC: Versius cases 47-337 against da Vinci restart cases 1-382",
+    "or_time": {
+      "label": "fixed or",
+      "outcome": "or_time",
+      "estimate": -2.034188,
+      "se": 3.007984,
+      "ci95": [-7.929736, 3.86136],
+      "ci90": [-6.981886, 2.91351],
+      "p": 0.498874,
+      "n_ref": 291,
+      "n_cmp": 382,
+      "crude_ref": 169.237113,
+      "crude_cmp": 161.371728,
+      "median_ref": 165,
+      "median_cmp": 160,
+      "eq_margin": 15,
+      "equivalent": true
+    },
+    "psm_pt2": {
+      "label": "fixed pT2",
+      "outcome": "psm",
+      "estimate": 0.098386,
+      "se": 0.043796,
+      "ci95": [0.012546, 0.184225],
+      "ci90": [0.026347, 0.170424],
+      "p": 0.024676,
+      "or": 1.757218,
+      "events_ref": 29,
+      "events_cmp": 69,
+      "n_ref": 156,
+      "n_cmp": 231,
+      "crude_ref": 0.185897,
+      "crude_cmp": 0.298701,
+      "eq_margin": 0.1,
+      "equivalent": false
+    },
+    "psm_all": {
+      "label": "fixed all",
+      "outcome": "psm",
+      "estimate": 0.084814,
+      "se": 0.034774,
+      "ci95": [0.016658, 0.15297],
+      "ci90": [0.027616, 0.142012],
+      "p": 0.014728,
+      "or": 1.569596,
+      "events_ref": 75,
+      "events_cmp": 127,
+      "n_ref": 283,
+      "n_cmp": 367,
+      "crude_ref": 0.265018,
+      "crude_cmp": 0.346049
+    }
+  }
+}

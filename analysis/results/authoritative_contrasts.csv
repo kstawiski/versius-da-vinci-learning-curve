@@ -1,0 +1,26 @@
+block,outcome,source,est,lo95,hi95,lo90,hi90,p,n_ref,n_cmp,events_ref,events_cmp,crude_ref,crude_cmp,equivalent,eq_margin
+A3a initial phase,or_time,full model,-33.456757,-48.922966,-17.990548,-46.436393,-20.477122,2.2e-05,98,100,,,190.571429,150.49,False,15
+A3a initial phase,psm_pt2,full model,20.8408,2.1043,39.577200000000005,5.1166,36.5649,0.029251,49,59,11,23,0.22449,0.389831,False,10.0
+A3a initial phase,psm_all,full model,5.4461,-8.6549,19.5472,-6.3879,17.2801,0.449061,98,98,36,41,0.367347,0.418367,,
+A4 concurrent 2024,or_time,full model,6.50584,-4.397657,17.409337,-2.64466,15.65634,0.242218,99,105,,,174.989899,152.180952,False,15
+A4 concurrent 2024,psm_pt2,full model,8.3822,-11.4436,28.207900000000002,-8.2561,25.0204,0.407298,48,61,14,23,0.291667,0.377049,False,10.0
+A4 concurrent 2024,psm_all,full model,6.7717,-8.4794,22.0228,-6.0275,19.5708,0.384165,96,103,31,43,0.322917,0.417476,,
+A4 concurrent 2024,los,full model,0.207121,-0.04875,0.462991,-0.007612,0.421854,0.112616,99,105,,,4.505051,4.247619,,
+A4 concurrent 2024,readmission_30d,crude only (no events),,,,,,,58,82,0,0,,,,
+A4 concurrent 2024,psa_persistence_eau,Firth (sparse rule),-6.6967,-19.551199999999998,6.1578,-17.4845,4.0912,0.307226,28,58,3,3,,,,
+A4 concurrent 2024,pad_free_3m,Firth (sparse rule),-4.1318,-25.0939,16.8302,-21.7237,13.4601,0.699254,31,51,4,10,,,,
+A4 concurrent 2024,pad_free_12m,Firth (sparse rule),-12.349499999999999,-40.204299999999996,15.5053,-35.726,11.027000000000001,0.384871,18,42,9,22,,,,
+"A4 concurrent 2024, calendar-adjusted",or_time,full model,9.425255,-4.804049,23.654558,-2.51635,21.366859,0.194202,99,105,,,174.989899,152.180952,False,15
+"A4 concurrent 2024, calendar-adjusted",psm_pt2,full model,4.1884999999999994,-25.0927,33.4696,-20.3851,28.762,0.779202,48,61,14,23,0.291667,0.377049,False,10.0
+"A4 concurrent 2024, calendar-adjusted",psm_all,full model,8.2898,-15.6113,32.1909,-11.7686,28.3483,0.496638,96,103,31,43,0.322917,0.417476,,
+B1 mature phases,or_time,full model,-5.060507,-12.011822,1.890808,-10.894233,0.773219,0.153626,226,200,,,167.995575,159.115,True,15
+B1 mature phases,psm_pt2,full model,-0.2812,-10.027999999999999,9.4656,-8.4609,7.8986,0.954911,126,123,24,26,0.190476,0.211382,True,10.0
+B1 mature phases,psm_all,full model,3.8743,-4.295,12.0437,-2.9815,10.7302,0.352613,219,192,55,56,0.251142,0.291667,,
+B1 mature phases,los,full model,-0.082922,-0.289405,0.123561,-0.256207,0.090364,0.43122,226,200,,,4.433628,4.31,,
+B1 mature phases,readmission_30d,crude only (no events),,,,,,,156,106,0,0,,,,
+B1 mature phases,psa_persistence_eau,full model,5.5105,-3.656,14.677100000000001,-2.1822999999999997,13.203400000000002,0.238697,97,84,10,11,0.103093,0.130952,,
+B1 mature phases,pad_free_3m,Firth (sparse rule),17.3375,3.9687,30.706400000000002,6.117999999999999,28.557,0.011029,96,52,9,14,,,,
+B1 mature phases,pad_free_12m,not estimable,,,,,,,52,NA,,,,,,
+"B1f post hoc, after the Versius learning phase",or_time,full model,-2.034188,-7.929736,3.86136,-6.981886,2.91351,0.498874,291,382,,,169.237113,161.371728,True,15
+"B1f post hoc, after the Versius learning phase",psm_pt2,full model,9.8386,1.2546,18.4225,2.6347,17.0424,0.024676,156,231,29,69,0.185897,0.298701,False,10.0
+"B1f post hoc, after the Versius learning phase",psm_all,full model,8.4814,1.6658,15.296999999999999,2.7616,14.2012,0.014728,283,367,75,127,0.265018,0.346049,,

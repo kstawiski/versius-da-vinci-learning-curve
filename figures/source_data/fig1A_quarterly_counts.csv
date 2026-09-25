@@ -1,0 +1,103 @@
+"hospital","q","platform","n"
+"SalveMedica, Łódź","2021-Q1","Versius",0
+"SalveMedica, Łódź","2021-Q1","da Vinci",1
+"SalveMedica, Łódź","2021-Q1","Laparoscopic",1
+"SalveMedica, Łódź","2021-Q2","Versius",0
+"SalveMedica, Łódź","2021-Q2","da Vinci",4
+"SalveMedica, Łódź","2021-Q2","Laparoscopic",6
+"SalveMedica, Łódź","2021-Q3","Versius",0
+"SalveMedica, Łódź","2021-Q3","da Vinci",4
+"SalveMedica, Łódź","2021-Q3","Laparoscopic",16
+"SalveMedica, Łódź","2021-Q4","Versius",2
+"SalveMedica, Łódź","2021-Q4","da Vinci",4
+"SalveMedica, Łódź","2021-Q4","Laparoscopic",16
+"SalveMedica, Łódź","2022-Q1","Versius",8
+"SalveMedica, Łódź","2022-Q1","da Vinci",1
+"SalveMedica, Łódź","2022-Q1","Laparoscopic",11
+"SalveMedica, Łódź","2022-Q2","Versius",5
+"SalveMedica, Łódź","2022-Q2","da Vinci",1
+"SalveMedica, Łódź","2022-Q2","Laparoscopic",10
+"SalveMedica, Łódź","2022-Q3","Versius",0
+"SalveMedica, Łódź","2022-Q3","da Vinci",0
+"SalveMedica, Łódź","2022-Q3","Laparoscopic",10
+"SalveMedica, Łódź","2022-Q4","Versius",23
+"SalveMedica, Łódź","2022-Q4","da Vinci",1
+"SalveMedica, Łódź","2022-Q4","Laparoscopic",1
+"SalveMedica, Łódź","2023-Q1","Versius",26
+"SalveMedica, Łódź","2023-Q1","da Vinci",0
+"SalveMedica, Łódź","2023-Q1","Laparoscopic",0
+"SalveMedica, Łódź","2023-Q2","Versius",26
+"SalveMedica, Łódź","2023-Q2","da Vinci",2
+"SalveMedica, Łódź","2023-Q2","Laparoscopic",0
+"SalveMedica, Łódź","2023-Q3","Versius",15
+"SalveMedica, Łódź","2023-Q3","da Vinci",1
+"SalveMedica, Łódź","2023-Q3","Laparoscopic",0
+"SalveMedica, Łódź","2024-Q1","Versius",11
+"SalveMedica, Łódź","2024-Q1","da Vinci",18
+"SalveMedica, Łódź","2024-Q1","Laparoscopic",0
+"SalveMedica, Łódź","2024-Q2","Versius",8
+"SalveMedica, Łódź","2024-Q2","da Vinci",18
+"SalveMedica, Łódź","2024-Q2","Laparoscopic",0
+"SalveMedica, Łódź","2024-Q3","Versius",0
+"SalveMedica, Łódź","2024-Q3","da Vinci",16
+"SalveMedica, Łódź","2024-Q3","Laparoscopic",0
+"SalveMedica, Łódź","2024-Q4","Versius",0
+"SalveMedica, Łódź","2024-Q4","da Vinci",28
+"SalveMedica, Łódź","2024-Q4","Laparoscopic",0
+"SalveMedica, Łódź","2025-Q1","Versius",4
+"SalveMedica, Łódź","2025-Q1","da Vinci",19
+"SalveMedica, Łódź","2025-Q1","Laparoscopic",0
+"SalveMedica, Łódź","2025-Q2","Versius",0
+"SalveMedica, Łódź","2025-Q2","da Vinci",15
+"SalveMedica, Łódź","2025-Q2","Laparoscopic",0
+"SalveMedica, Łódź","2025-Q3","Versius",0
+"SalveMedica, Łódź","2025-Q3","da Vinci",19
+"SalveMedica, Łódź","2025-Q3","Laparoscopic",0
+"SalveMedica, Łódź","2025-Q4","Versius",0
+"SalveMedica, Łódź","2025-Q4","da Vinci",25
+"SalveMedica, Łódź","2025-Q4","Laparoscopic",0
+"SalveMedica, Łódź","2026-Q1","Versius",0
+"SalveMedica, Łódź","2026-Q1","da Vinci",19
+"SalveMedica, Łódź","2026-Q1","Laparoscopic",0
+"Bełchatów","2022-Q3","Versius",24
+"Bełchatów","2022-Q3","da Vinci",0
+"Bełchatów","2022-Q3","Laparoscopic",0
+"Bełchatów","2022-Q4","Versius",24
+"Bełchatów","2022-Q4","da Vinci",0
+"Bełchatów","2022-Q4","Laparoscopic",0
+"Bełchatów","2023-Q1","Versius",25
+"Bełchatów","2023-Q1","da Vinci",0
+"Bełchatów","2023-Q1","Laparoscopic",0
+"Bełchatów","2023-Q2","Versius",16
+"Bełchatów","2023-Q2","da Vinci",0
+"Bełchatów","2023-Q2","Laparoscopic",0
+"Bełchatów","2023-Q3","Versius",28
+"Bełchatów","2023-Q3","da Vinci",0
+"Bełchatów","2023-Q3","Laparoscopic",0
+"Bełchatów","2023-Q4","Versius",12
+"Bełchatów","2023-Q4","da Vinci",0
+"Bełchatów","2023-Q4","Laparoscopic",0
+"Bełchatów","2024-Q1","Versius",35
+"Bełchatów","2024-Q1","da Vinci",0
+"Bełchatów","2024-Q1","Laparoscopic",3
+"Bełchatów","2024-Q2","Versius",23
+"Bełchatów","2024-Q2","da Vinci",0
+"Bełchatów","2024-Q2","Laparoscopic",11
+"Bełchatów","2024-Q3","Versius",22
+"Bełchatów","2024-Q3","da Vinci",0
+"Bełchatów","2024-Q3","Laparoscopic",4
+"Bełchatów","2024-Q4","Versius",0
+"Bełchatów","2024-Q4","da Vinci",25
+"Bełchatów","2024-Q4","Laparoscopic",9
+"Bełchatów","2025-Q1","Versius",0
+"Bełchatów","2025-Q1","da Vinci",49
+"Bełchatów","2025-Q1","Laparoscopic",1
+"Bełchatów","2025-Q2","Versius",0
+"Bełchatów","2025-Q2","da Vinci",67
+"Bełchatów","2025-Q2","Laparoscopic",0
+"Bełchatów","2025-Q3","Versius",0
+"Bełchatów","2025-Q3","da Vinci",53
+"Bełchatów","2025-Q3","Laparoscopic",1
+"Bełchatów","2026-Q1","Versius",0
+"Bełchatów","2026-Q1","da Vinci",11
+"Bełchatów","2026-Q1","Laparoscopic",0

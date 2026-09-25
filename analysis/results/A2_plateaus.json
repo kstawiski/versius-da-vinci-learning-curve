@@ -1,0 +1,148 @@
+{
+  "Versius or": {
+    "series": "Versius",
+    "outcome": "or",
+    "n_model": 335,
+    "nstar": 111,
+    "nstar_sens10": null,
+    "asymptote": 159.811064,
+    "value_case1": 290.002788,
+    "value_case25": 200.888788,
+    "value_case50": 168.936908,
+    "value_case100": 178.103233,
+    "value_last": 146.314743,
+    "slope_last100_per10": -2.196932,
+    "edf_median": 7.13397,
+    "smooth_p_median": 0,
+    "smooth_p_max": 0,
+    "boot_primary": {
+      "n_ok": 2000,
+      "n_fit_failed": 0,
+      "n_not_reached": 790,
+      "share_not_reached": 0.395,
+      "unconditional": {
+        "p2.5": 34,
+        "median": 281,
+        "p97.5": "Inf"
+      },
+      "conditional_on_reached": [32, 178, 288.775],
+      "share_case1": 0.000826
+    },
+    "boot_sens10": {
+      "n_ok": 2000,
+      "n_fit_failed": 0,
+      "n_not_reached": 1349,
+      "share_not_reached": 0.6745,
+      "unconditional": {
+        "p2.5": 80,
+        "median": "Inf",
+        "p97.5": "Inf"
+      },
+      "conditional_on_reached": [48.25, 276, 293],
+      "share_case1": 0
+    }
+  },
+  "Versius psm_pt2": {
+    "series": "Versius",
+    "outcome": "psm_pt2",
+    "n_model": 183,
+    "nstar": 285,
+    "nstar_sens10": null,
+    "asymptote": 0.337049,
+    "value_case1": 0.207853,
+    "value_case25": 0.185177,
+    "value_case50": 0.164284,
+    "value_case100": 0.137031,
+    "value_last": 0.381828,
+    "slope_last100_per10": 0.016908,
+    "edf_median": 2.04284,
+    "smooth_p_median": 0.09228,
+    "smooth_p_max": 0.117956,
+    "boot_primary": {
+      "n_ok": 2000,
+      "n_fit_failed": 0,
+      "n_not_reached": 793,
+      "share_not_reached": 0.3965,
+      "unconditional": {
+        "p2.5": 1,
+        "median": 282,
+        "p97.5": "Inf"
+      },
+      "conditional_on_reached": [1, 264, 287],
+      "share_case1": 0.047225
+    }
+  },
+  "dVrestart or": {
+    "series": "dVrestart",
+    "outcome": "or",
+    "n_model": 382,
+    "nstar": 182,
+    "nstar_sens10": 196,
+    "asymptote": 157.72848,
+    "value_case1": 158.623476,
+    "value_case25": 146.631539,
+    "value_case50": 145.756164,
+    "value_case100": 173.868568,
+    "value_last": 154.624838,
+    "slope_last100_per10": 0.130303,
+    "edf_median": 6.484901,
+    "smooth_p_median": 3.747191e-06,
+    "smooth_p_max": 5.23422e-06,
+    "boot_primary": {
+      "n_ok": 2000,
+      "n_fit_failed": 0,
+      "n_not_reached": 44,
+      "share_not_reached": 0.022,
+      "unconditional": {
+        "p2.5": 27,
+        "median": 185,
+        "p97.5": 312
+      },
+      "conditional_on_reached": [25.875, 184, 297],
+      "share_case1": 0.023006
+    },
+    "boot_sens10": {
+      "n_ok": 2000,
+      "n_fit_failed": 0,
+      "n_not_reached": 223,
+      "share_not_reached": 0.1115,
+      "unconditional": {
+        "p2.5": 165,
+        "median": 213,
+        "p97.5": "Inf"
+      },
+      "conditional_on_reached": [165, 208, 317],
+      "share_case1": 0.001688
+    }
+  },
+  "dVrestart psm_pt2": {
+    "series": "dVrestart",
+    "outcome": "psm_pt2",
+    "n_model": 231,
+    "nstar": null,
+    "nstar_sens10": null,
+    "asymptote": 0.348266,
+    "value_case1": 0.304859,
+    "value_case25": 0.343147,
+    "value_case50": 0.380028,
+    "value_case100": 0.403141,
+    "value_last": 0.414886,
+    "slope_last100_per10": 0.02106,
+    "edf_median": 2.910228,
+    "smooth_p_median": 0.083086,
+    "smooth_p_max": 0.141385,
+    "boot_primary": {
+      "n_ok": 2000,
+      "n_fit_failed": 0,
+      "n_not_reached": 1114,
+      "share_not_reached": 0.557,
+      "unconditional": {
+        "p2.5": 41,
+        "median": "Inf",
+        "p97.5": "Inf"
+      },
+      "conditional_on_reached": [1, 277, 331],
+      "share_case1": 0.041761
+    }
+  }
+}
