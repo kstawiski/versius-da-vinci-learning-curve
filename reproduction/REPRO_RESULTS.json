@@ -1,0 +1,349 @@
+{
+  "R1": {
+    "versius": {
+      "total_cases": 337,
+      "pt2_cases": 190,
+      "pt2_denominator": 337,
+      "pt2_proportion": 0.5638,
+      "or_time_cases": 335,
+      "or_time_denominator": 337,
+      "or_time_completeness": 0.9941
+    },
+    "davinci": {
+      "total_cases": 401,
+      "pt2_cases": 253,
+      "pt2_denominator": 401,
+      "pt2_proportion": 0.6309,
+      "or_time_cases": 401,
+      "or_time_denominator": 401,
+      "or_time_completeness": 1
+    },
+    "restart_davinci": {
+      "total_cases": 382,
+      "pt2_cases": 239,
+      "pt2_denominator": 382,
+      "pt2_proportion": 0.6257,
+      "or_time_cases": 382,
+      "or_time_denominator": 382,
+      "or_time_completeness": 1
+    },
+    "versius_2024": {
+      "total_cases": 99,
+      "pt2_cases": 50,
+      "pt2_denominator": 99,
+      "pt2_proportion": 0.5051,
+      "or_time_cases": 99,
+      "or_time_denominator": 99,
+      "or_time_completeness": 1
+    },
+    "restart_davinci_2024": {
+      "total_cases": 105,
+      "pt2_cases": 63,
+      "pt2_denominator": 105,
+      "pt2_proportion": 0.6,
+      "or_time_cases": 105,
+      "or_time_denominator": 105,
+      "or_time_completeness": 1
+    }
+  },
+  "R2": {
+    "operative_time": {
+      "model": "GAM Gaussian on log(or_time), s(platform_n, k=10), REML, smearing retransformation",
+      "asymptote_minutes": 159.68,
+      "asymptote_window": "cases 288-337 (final 50 cases)",
+      "n_star_15min": 111,
+      "n_star_10min": 337,
+      "slope_final_100_cases_min_per_case": -0.2336,
+      "standardized_curve_milestones_minutes": {
+        "case_1": 289.42,
+        "case_25": 200.65,
+        "case_50": 168.63,
+        "case_100": 177.86,
+        "case_337": 146.15
+      }
+    },
+    "pt2_positive_margin": {
+      "model": "Logistic GAM on psm, s(platform_n, k=5), REML, standardized over pT2 cases",
+      "asymptote_rate": 0.3458,
+      "asymptote_percentage": 34.58,
+      "asymptote_window": "cases 288-337 (final 50 cases)",
+      "n_star_5pp": 286,
+      "standardized_curve_milestones_rate": {
+        "case_1": 0.2127,
+        "case_25": 0.1889,
+        "case_50": 0.1671,
+        "case_100": 0.1384,
+        "case_337": 0.3923
+      },
+      "standardized_curve_milestones_percentage": {
+        "case_1": 21.27,
+        "case_25": 18.89,
+        "case_50": 16.71,
+        "case_100": 13.84,
+        "case_337": 39.23
+      }
+    }
+  },
+  "R3": {
+    "operative_time": {
+      "model": "GAM Gaussian on log(or_time), s(dv_restart_n, k=10), REML, smearing retransformation",
+      "asymptote_minutes": 157.62,
+      "asymptote_window": "cases 333-382 (final 50 cases)",
+      "n_star_15min": 182,
+      "n_star_10min": 196,
+      "slope_final_100_cases_min_per_case": 0.0317,
+      "standardized_curve_milestones_minutes": {
+        "case_1": 158.76,
+        "case_25": 146.71,
+        "case_50": 145.81,
+        "case_100": 173.92,
+        "case_382": 154.43
+      }
+    },
+    "pt2_positive_margin": {
+      "model": "Logistic GAM on psm, s(dv_restart_n, k=5), REML, standardized over pT2 cases",
+      "asymptote_rate": 0.3379,
+      "asymptote_percentage": 33.79,
+      "asymptote_window": "cases 333-382 (final 50 cases)",
+      "n_star_5pp": 382,
+      "standardized_curve_milestones_rate": {
+        "case_1": 0.332,
+        "case_25": 0.3593,
+        "case_50": 0.3846,
+        "case_100": 0.3939,
+        "case_382": 0.3939
+      },
+      "standardized_curve_milestones_percentage": {
+        "case_1": 33.2,
+        "case_25": 35.93,
+        "case_50": 38.46,
+        "case_100": 39.39,
+        "case_382": 39.39
+      }
+    }
+  },
+  "R4": {
+    "comparison": "da Vinci restart cases 1-100 vs Versius cases 1-100 (reference: Versius)",
+    "operative_time_minutes": {
+      "model": "Linear regression on minutes, HC3 robust errors, pooled across 20 imputations",
+      "adjusted_difference": -33.09,
+      "se": 7.88,
+      "ci_95": [-48.54, -17.63],
+      "ci_90": [-46.05, -20.12],
+      "p_value": 0
+    },
+    "pt2_margin_risk_difference": {
+      "model": "Logistic regression, marginally standardized risk difference, HC0 delta-method, pooled across 20 imputations",
+      "adjusted_risk_difference": 0.2144,
+      "adjusted_risk_difference_percentage": 21.44,
+      "se": 0.0947,
+      "se_percentage": 9.47,
+      "ci_95": [0.0288, 0.4001],
+      "ci_95_percentage": [2.88, 40.01],
+      "ci_90": [0.0586, 0.3702],
+      "ci_90_percentage": [5.86, 37.02],
+      "p_value": 0.0236
+    }
+  },
+  "R5": {
+    "cohort": "Calendar 2024: Versius (N=99) vs da Vinci restart (N=105)",
+    "endpoints": {
+      "or_time": {
+        "endpoint_name": "Operative time (minutes)",
+        "unit": "minutes",
+        "crude_versius": {
+          "mean": 174.9899,
+          "sd": 47.5226,
+          "n": 99
+        },
+        "crude_davinci": {
+          "mean": 152.181,
+          "sd": 40.5284,
+          "n": 105
+        },
+        "adjusted_estimate": 6.469,
+        "se": 5.56,
+        "ci_95": [-4.428, 17.367],
+        "ci_90": [-2.676, 15.615],
+        "p_value": 0.2446
+      },
+      "pt2_margin": {
+        "endpoint_name": "pT2 surgical margin positive",
+        "unit": "risk difference",
+        "crude_versius": {
+          "events": 14,
+          "n": 48,
+          "rate": 0.2917
+        },
+        "crude_davinci": {
+          "events": 23,
+          "n": 61,
+          "rate": 0.377
+        },
+        "adjusted_estimate": 0.086,
+        "se": 0.1,
+        "ci_95": [-0.111, 0.282],
+        "ci_90": [-0.08, 0.251],
+        "p_value": 0.3943
+      },
+      "all_margin": {
+        "endpoint_name": "All-stage surgical margin positive",
+        "unit": "risk difference",
+        "crude_versius": {
+          "events": 31,
+          "n": 96,
+          "rate": 0.3229
+        },
+        "crude_davinci": {
+          "events": 43,
+          "n": 103,
+          "rate": 0.4175
+        },
+        "adjusted_estimate": 0.068,
+        "se": 0.077,
+        "ci_95": [-0.084, 0.219],
+        "ci_90": [-0.06, 0.195],
+        "p_value": 0.3826
+      },
+      "los": {
+        "endpoint_name": "Length of stay",
+        "unit": "days",
+        "crude_versius": {
+          "mean": 4.5051,
+          "sd": 1.0726,
+          "n": 99
+        },
+        "crude_davinci": {
+          "mean": 4.2476,
+          "sd": 0.6322,
+          "n": 105
+        },
+        "adjusted_estimate": 0.206,
+        "se": 0.131,
+        "ci_95": [-0.05, 0.462],
+        "ci_90": [-0.009, 0.421],
+        "p_value": 0.1147
+      },
+      "readm_30d": {
+        "endpoint_name": "30-day readmission",
+        "unit": "risk difference",
+        "crude_versius": {
+          "events": 0,
+          "n": 58,
+          "rate": 0
+        },
+        "crude_davinci": {
+          "events": 0,
+          "n": 82,
+          "rate": 0
+        },
+        "adjusted_estimate": 0,
+        "se": 0,
+        "ci_95": [0, 0],
+        "ci_90": [0, 0],
+        "p_value": 1
+      },
+      "psa_pers": {
+        "endpoint_name": "EAU PSA persistence (window-closed)",
+        "unit": "risk difference",
+        "crude_versius": {
+          "events": 3,
+          "n": 28,
+          "rate": 0.1071
+        },
+        "crude_davinci": {
+          "events": 3,
+          "n": 58,
+          "rate": 0.0517
+        },
+        "adjusted_estimate": -0.061,
+        "se": 0.06,
+        "ci_95": [-0.178, 0.056],
+        "ci_90": [-0.159, 0.037],
+        "p_value": 0.3052
+      },
+      "pad_free_3m": {
+        "endpoint_name": "Pad-free continence at 3 months (window-closed)",
+        "unit": "risk difference",
+        "crude_versius": {
+          "events": 4,
+          "n": 31,
+          "rate": 0.129
+        },
+        "crude_davinci": {
+          "events": 10,
+          "n": 51,
+          "rate": 0.1961
+        },
+        "adjusted_estimate": -0.04,
+        "se": 0.084,
+        "ci_95": [-0.205, 0.126],
+        "ci_90": [-0.179, 0.099],
+        "p_value": 0.6373
+      },
+      "pad_free_12m": {
+        "endpoint_name": "Pad-free continence at 12 months (window-closed)",
+        "unit": "risk difference",
+        "crude_versius": {
+          "events": 9,
+          "n": 18,
+          "rate": 0.5
+        },
+        "crude_davinci": {
+          "events": 22,
+          "n": 42,
+          "rate": 0.5238
+        },
+        "adjusted_estimate": -0.099,
+        "se": 0.17,
+        "ci_95": [-0.432, 0.234],
+        "ci_90": [-0.378, 0.18],
+        "p_value": 0.5604
+      }
+    }
+  },
+  "R6": {
+    "n_replicates": 600,
+    "method": "Case-resampling bootstrap (B=600), 1 stochastic imputation per replicate, rule applied inside each replicate",
+    "n_star_15min": {
+      "reproduced_point_estimate": 111,
+      "bootstrap_median": 282,
+      "bootstrap_mean": 241.8,
+      "ci_95_percentile": [35, 337],
+      "ci_90_percentile": [40, 337],
+      "distribution_deciles": {
+        "0%": 28,
+        "10%": 59.9,
+        "20%": 114,
+        "30%": 188.8,
+        "40%": 271,
+        "50%": 282,
+        "60%": 290,
+        "70%": 337,
+        "80%": 337,
+        "90%": 337,
+        "100%": 337
+      }
+    },
+    "n_star_10min": {
+      "reproduced_point_estimate": 337,
+      "bootstrap_median": 337,
+      "bootstrap_mean": 301.3,
+      "ci_95_percentile": [96, 337],
+      "ci_90_percentile": [126, 337],
+      "distribution_deciles": {
+        "0%": 31,
+        "10%": 200.9,
+        "20%": 281,
+        "30%": 291,
+        "40%": 337,
+        "50%": 337,
+        "60%": 337,
+        "70%": 337,
+        "80%": 337,
+        "90%": 337,
+        "100%": 337
+      }
+    }
+  }
+}

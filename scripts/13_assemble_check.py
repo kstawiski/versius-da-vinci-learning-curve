@@ -21,7 +21,7 @@ tables = f"""**Table 1.** Patient and tumour characteristics by robotic series a
 
 {T1}
 
-Values are median (IQR) or n/N (%). Denominators exclude missing values. The da Vinci restart comprises da Vinci cases 20–401, operated from 2024. Da Vinci cases 1–19 were operated in 2021–2023. EAU, European Association of Urology. ISUP, International Society of Urological Pathology.
+Values are median (IQR) or n/N (%). Denominators exclude missing values. The da Vinci restart comprises da Vinci cases 20–401, operated from 2024. Da Vinci cases 1–19 were operated in 2021–2023. EAU risk groups follow the European Association of Urology classification. EAU, European Association of Urology. ISUP, International Society of Urological Pathology.
 
 **Table 2.** Perioperative, pathological and functional outcomes by series and learning phase.
 
@@ -49,7 +49,7 @@ for ln in lines:
     prose.append((section, ln))
 issues = []
 for sec, ln in prose:
-    body = re.sub(r'\[OWNER INPUT[^\]]*\]', '', ln)
+    body = re.sub(r'\[(?:OWNER INPUT|PLACEHOLDER)[^\]]*\]', '', ln)
     body = re.sub(r'https?://\S+|doi:\S+', '', body)
     if re.search(r'(?<!\d):(?!\d)', body): issues.append(('colon', sec, ln[:90]))
     if ';' in body: issues.append(('semicolon', sec, ln[:90]))

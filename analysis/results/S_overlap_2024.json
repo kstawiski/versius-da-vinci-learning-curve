@@ -1,0 +1,227 @@
+{
+  "label": "POST HOC 2024 overlap and ascertainment",
+  "monthly_counts": [
+    {
+      "hospital": "BE",
+      "month": "1",
+      "robot": "Versius",
+      "Freq": 10
+    },
+    {
+      "hospital": "BE",
+      "month": "2",
+      "robot": "Versius",
+      "Freq": 10
+    },
+    {
+      "hospital": "SM",
+      "month": "3",
+      "robot": "Versius",
+      "Freq": 11
+    },
+    {
+      "hospital": "BE",
+      "month": "3",
+      "robot": "Versius",
+      "Freq": 15
+    },
+    {
+      "hospital": "SM",
+      "month": "4",
+      "robot": "Versius",
+      "Freq": 3
+    },
+    {
+      "hospital": "BE",
+      "month": "4",
+      "robot": "Versius",
+      "Freq": 6
+    },
+    {
+      "hospital": "SM",
+      "month": "5",
+      "robot": "Versius",
+      "Freq": 5
+    },
+    {
+      "hospital": "BE",
+      "month": "5",
+      "robot": "Versius",
+      "Freq": 8
+    },
+    {
+      "hospital": "BE",
+      "month": "6",
+      "robot": "Versius",
+      "Freq": 9
+    },
+    {
+      "hospital": "BE",
+      "month": "7",
+      "robot": "Versius",
+      "Freq": 10
+    },
+    {
+      "hospital": "BE",
+      "month": "8",
+      "robot": "Versius",
+      "Freq": 5
+    },
+    {
+      "hospital": "BE",
+      "month": "9",
+      "robot": "Versius",
+      "Freq": 7
+    },
+    {
+      "hospital": "SM",
+      "month": "1",
+      "robot": "restart",
+      "Freq": 7
+    },
+    {
+      "hospital": "SM",
+      "month": "2",
+      "robot": "restart",
+      "Freq": 6
+    },
+    {
+      "hospital": "SM",
+      "month": "3",
+      "robot": "restart",
+      "Freq": 5
+    },
+    {
+      "hospital": "SM",
+      "month": "4",
+      "robot": "restart",
+      "Freq": 4
+    },
+    {
+      "hospital": "SM",
+      "month": "5",
+      "robot": "restart",
+      "Freq": 5
+    },
+    {
+      "hospital": "SM",
+      "month": "6",
+      "robot": "restart",
+      "Freq": 9
+    },
+    {
+      "hospital": "SM",
+      "month": "7",
+      "robot": "restart",
+      "Freq": 5
+    },
+    {
+      "hospital": "SM",
+      "month": "8",
+      "robot": "restart",
+      "Freq": 6
+    },
+    {
+      "hospital": "SM",
+      "month": "9",
+      "robot": "restart",
+      "Freq": 5
+    },
+    {
+      "hospital": "SM",
+      "month": "10",
+      "robot": "restart",
+      "Freq": 9
+    },
+    {
+      "hospital": "SM",
+      "month": "11",
+      "robot": "restart",
+      "Freq": 7
+    },
+    {
+      "hospital": "SM",
+      "month": "12",
+      "robot": "restart",
+      "Freq": 12
+    },
+    {
+      "hospital": "BE",
+      "month": "12",
+      "robot": "restart",
+      "Freq": 25
+    }
+  ],
+  "n_2024": 204,
+  "n_in_overlap_cells": 55,
+  "overlap_cells": [
+    {
+      "centre": "SM",
+      "q": 1
+    },
+    {
+      "centre": "SM",
+      "q": 2
+    }
+  ],
+  "overlap_by_robot": {
+    "Versius": 19,
+    "restart": 36
+  },
+  "overlap_or_time": {
+    "label": "overlap operative time",
+    "outcome": "or_time",
+    "estimate": 9.011837,
+    "se": 8.435819,
+    "ci95": [-7.522084, 25.545759],
+    "ci90": [-4.863863, 22.887538],
+    "p": 0.285393,
+    "n_ref": 19,
+    "n_cmp": 36,
+    "crude_ref": 130,
+    "crude_cmp": 144.166667,
+    "median_ref": 120,
+    "median_cmp": 137.5,
+    "eq_margin": 15,
+    "equivalent": false
+  },
+  "overlap_counts": {
+    "or_median": [137.5, 120],
+    "psm_pt2": {
+      "ref": [2, 7],
+      "cmp": [5, 18]
+    },
+    "psm": {
+      "ref": [4, 17],
+      "cmp": [15, 35]
+    }
+  },
+  "functional_2024": {
+    "Versius": {
+      "pad_free_3m": [31, 99],
+      "pad_free_12m": [18, 99],
+      "psa_persistence": [28, 99]
+    },
+    "restart": {
+      "pad_free_3m": [51, 105],
+      "pad_free_12m": [42, 105],
+      "psa_persistence": [58, 105]
+    }
+  },
+  "functional_series": {
+    "Versius": {
+      "pad_free_3m": [152, 337],
+      "pad_free_12m": [83, 337],
+      "psa_persistence": [144, 337]
+    },
+    "restart": {
+      "pad_free_3m": [130, 346],
+      "pad_free_12m": [50, 130],
+      "psa_persistence": [164, 374]
+    }
+  },
+  "grade_available": {
+    "Versius": [292, 337, 6, 2, 238],
+    "restart": [212, 382, 0, 0, 235]
+  }
+}

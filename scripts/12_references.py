@@ -5,7 +5,7 @@ import csv, json, sys, time, urllib.request, urllib.parse, html, re
 from pathlib import Path
 WS = Path(__file__).resolve().parents[1]
 ORDER = ['FernandezConejo2026BJU', 'Almeida2025', 'Chen2025', 'Reitano2025', 'Chierigo2026', 'Ficarra2024', 'Hammadeh2026',
-         'Antonelli2025Minerva', 'Yu2026', 'Gavi2025', 'Liu2025', 'Roberts2025', 'vonElm2007', 'McCulloch2009', 'Dindo2004',
+         'Antonelli2025Minerva', 'Yu2026', 'Gavi2025', 'Liu2025', 'Roberts2025', 'vonElm2007', 'McCulloch2009', 'Benchimol2015', 'Dindo2004',
          'Wood2011', 'Duan1983', 'vanBuuren2011', 'Muggeo2003', 'Firth1993', 'Heinze2002', 'Steiner2000', 'Biau2008',
          'Newcombe1998', 'Bravi2024PSM', 'Vickers2007', 'Meneghetti2026', 'Mangano2021']
 doi = {}

@@ -3,7 +3,7 @@
 | Operations, n (Versius, da Vinci, restart, Versius 2024, restart 2024) | 337, 401, 382, 99, 105 | 337, 401, 382, 99, 105 | Exact |
 | Versius operative time curve, cases 1, 50, 100, last (min) | 290, 169, 178, 146 | 289, 169, 178, 146 | Within 1 min |
 | Versius long-run level (min) and plateau case (15-min rule) | 159.8, 111 | 159.7, 111 | Exact plateau case |
-| Versius plateau case, bootstrap 95% interval | 34 to not reached (2000 replicates; rule not met in 790) | 35 to 337, non-attainment coded as the last case (600 replicates) | Non-attainment was coded differently, as not reached and as case 337, and both place the upper limit at the end of the series |
+| Versius plateau case, bootstrap 95% interval | 34 to not reached (2000 replicates; rule not met in 790) | 35 to 337, non-attainment coded as the last case (600 replicates) | Not directly comparable. The re-implementation coded non-attainment as case 337, and at least 30% of its replicates took that value, against 40% (790 of 2000) not reaching the plateau in the primary analysis |
 | Restart operative time curve, cases 1, 50, 100 (min) | 159, 146, 174 | 159, 146, 174 | Within 1 min |
 | Restart plateau case (15-min and 10-min rules) | 182, 196 | 182, 196 | Exact |
 | Versius pT2 margin curve, cases 1, 100, last | 20.8%, 13.7%, 38.2% | 21.3%, 13.8%, 39.2% | Within 1 point |

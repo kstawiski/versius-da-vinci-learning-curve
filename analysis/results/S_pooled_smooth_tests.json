@@ -1,0 +1,43 @@
+{
+  "label": "Smooth case-number term, pooled across imputations by the D2 rule",
+  "Versius or": {
+    "pooled": {
+      "D2": 8.060909,
+      "df1": 8.183219,
+      "df2": 22336.320546,
+      "p": 3.98181e-11
+    },
+    "per_imputation_p_median": 0,
+    "per_imputation_p_range": [0, 0]
+  },
+  "Versius psm_pt2": {
+    "pooled": {
+      "D2": 2.054532,
+      "df1": 2.503921,
+      "df2": 886561.431326,
+      "p": 0.115465
+    },
+    "per_imputation_p_median": 0.09228,
+    "per_imputation_p_range": [0.078312, 0.117956]
+  },
+  "dVrestart or": {
+    "pooled": {
+      "D2": 5.469575,
+      "df1": 7.626829,
+      "df2": 411660.740615,
+      "p": 1.082991e-06
+    },
+    "per_imputation_p_median": 3.747191e-06,
+    "per_imputation_p_range": [2.292945e-06, 5.23422e-06]
+  },
+  "dVrestart psm_pt2": {
+    "pooled": {
+      "D2": 2.126664,
+      "df1": 3.436697,
+      "df2": 58382.692764,
+      "p": 0.085283
+    },
+    "per_imputation_p_median": 0.083086,
+    "per_imputation_p_range": [0.06512, 0.141385]
+  }
+}

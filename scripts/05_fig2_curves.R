@@ -56,7 +56,7 @@ team_panel <- function(pf, title) {
     scale_linetype_manual(values = c("SalveMedica" = "solid", "Bełchatów" = "42"), name = NULL) +
     scale_x_continuous(breaks = c(1, 50, 100, 150, 200), expand = expansion(mult = c(0.01, 0.02))) +
     scale_y_continuous(limits = c(100, 350), expand = expansion(mult = c(0, 0.02))) +
-    labs(x = "Hospital team's case number on the platform", y = "Operative time, minutes", title = title) +
+    labs(x = "Hospital's case number on the platform", y = "Operative time, minutes", title = title) +
     theme_postcddp() + theme(legend.position = "top")
 }
 pC <- team_panel("Versius", "C  Versius, by hospital"); pD <- team_panel("da Vinci", "D  da Vinci restart, by hospital")
