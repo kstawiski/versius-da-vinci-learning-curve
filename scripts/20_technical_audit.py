@@ -59,7 +59,11 @@ for kind, pat in [('Figure', r'Figures? (\d)(?:[A-D])?(?:\s*(?:and|–)\s*(\d))?
             if g and g not in order: order.append(g)
     inv[kind] = order
 res['callouts_first_mention_order'] = inv
-res['supplied_items'] = {'Figure': ['1', '2', '3'], 'Table': ['1', '2', '3'], 'Table S': ['1'], 'Figure S': ['1', '2'], 'Appendix S': ['1', '2']}
+legends = T.split('## Figure legends', 1)[1].split('\n## ', 1)[0]
+tables = T.split('## Tables', 1)[1].split('## Figure legends', 1)[0]
+res['supplied_items'] = {'Figure': re.findall(r'(?m)^\*\*Figure (\d)\.\*\*', legends), 'Table': re.findall(r'(?m)^\*\*Table (\d)\.\*\*', tables),
+                         **{k: re.findall(rf'(?m)^## {k}(\d)\.', S) for k in ['Table S', 'Figure S', 'Appendix S']}}
+res['callouts_match_supplied'] = {k: inv[k] == v for k, v in res['supplied_items'].items()}
 
 # 5. Citation coverage per paragraph in Introduction and Discussion.
 cov = []
