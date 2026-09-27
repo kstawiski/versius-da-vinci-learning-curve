@@ -95,5 +95,41 @@ out$hospital_months_2024 <- list(cells = unique(ym[, c("centre", "month")]), n =
 out$y2024_crude <- list(or_time_mean = as.list(tapply(y$or_time, y$robot, mean, na.rm = TRUE)), or_time_median = as.list(tapply(y$or_time, y$robot, median, na.rm = TRUE)),
   by_hospital_n = as.list(table(paste(y$centre, y$robot))),
   or_time_mean_by_hospital = as.list(tapply(y$or_time, paste(y$centre, y$robot), mean, na.rm = TRUE)))
+# ---------- 4. Operative-time contrasts within each hospital (owner decision, 27 September 2026) ----------
+# Operative time is recorded by each hospital's theatre staff, so time is compared only within hospitals.
+# The primary models adjust for hospital; these refit each contrast separately at each hospital.
+COV_OR_NOCENTRE <- sub(" \\+ centre", "", COV_OR)
+out$within_hospital_or_time <- list()
+for (cmp in names(G)) for (ct in c("SM", "BE")) {
+  gh <- function(dd) ifelse(dd$centre == ct, G[[cmp]](dd), NA)
+  base <- d; base$grp <- gh(base); base <- base[!is.na(base$grp) & !is.na(base$or_time), ]
+  n <- table(factor(base$grp, levels = c("ref", "cmp")))
+  out$within_hospital_or_time[[paste(cmp, ct)]] <- if (min(n) < 10) list(n_ref = n[["ref"]], n_cmp = n[["cmp"]], note = "fewer than 10 operations in a group") else
+    pool_contrast(imps, paste("within", ct, cmp), gh, "or_time", COV_OR_NOCENTRE)
+}
+# first-50-case model within SalveMedica, where all of the first 50 restart operations took place
+a3sm <- lapply(imps, function(di) {
+  dd <- di[di$centre == "SM" & ((di$platform == "Versius" & di$platform_n <= 50) | (!is.na(di$dv_restart_n) & di$dv_restart_n <= 50)), ]
+  dd$n50 <- ifelse(dd$platform == "Versius", dd$platform_n, dd$dv_restart_n); dd$dv <- as.integer(dd$platform == "da Vinci")
+  dd <- dd[!is.na(dd$or_time), ]
+  cv <- strsplit(COV_OR_NOCENTRE, " \\+ ")[[1]]; cv <- cv[sapply(cv, function(v) length(unique(dd[[v]][!is.na(dd[[v]])])) > 1)]
+  m <- lm(as.formula(paste("or_time ~ dv * n50 +", paste(cv, collapse = " + "))), data = dd)
+  V <- robust_vcov(m); b <- coef(m); z <- setNames(rep(0, length(b)), names(b))
+  L <- function(w) c(sum(w * b), as.numeric(t(w) %*% V %*% w))
+  w1 <- z; w1[c("dv", "dv:n50")] <- 1; w2 <- z; w2["n50"] <- 10; w3 <- z; w3[c("n50", "dv:n50")] <- 10; w4 <- z; w4["dv:n50"] <- 10
+  rbind(case1_diff_min = L(w1), slope_versius_per10 = L(w2), slope_dvrestart_per10 = L(w3), slope_diff_per10 = L(w4), n_versius = c(sum(dd$dv == 0), 0), n_restart = c(sum(dd$dv == 1), 0))
+})
+out$first50_within_SM <- lapply(c("case1_diff_min", "slope_versius_per10", "slope_dvrestart_per10", "slope_diff_per10"), function(r) {
+  pr <- rubin(sapply(a3sm, function(x) x[r, 1]), sapply(a3sm, function(x) x[r, 2])); q <- qt(.975, pr["df"])
+  list(term = r, est = unname(pr["est"]), ci95 = unname(pr["est"] + c(-1, 1) * q * pr["se"]))
+})
+out$first50_within_SM_n <- list(versius = a3sm[[1]]["n_versius", 1], restart = a3sm[[1]]["n_restart", 1])
+f50 <- d[d$centre == "SM" & ((d$platform == "Versius" & d$platform_n <= 50) | (!is.na(d$dv_restart_n) & d$dv_restart_n <= 50)), ]
+out$first50_within_SM_median <- as.list(tapply(f50$or_time, f50$platform, median, na.rm = TRUE))
+out$first50_within_SM_iqr <- lapply(split(f50$or_time, as.character(f50$platform)), function(x) unname(quantile(x, c(.25, .75), na.rm = TRUE)))
+bdv <- d[d$platform == "da Vinci" & d$centre == "BE", ]
+out$robotic_operations_before_first_BE_da_vinci <- min(bdv$robotic_n) - 1
+e19 <- d[d$platform == "da Vinci" & d$platform_n < 20, ]
+out$early_dv_1_19 <- list(n = nrow(e19), hospitals = as.list(table(as.character(e19$centre))), median = median(e19$or_time, na.rm = TRUE))
 write_json(out, file.path(WS, "analysis/results/R_revision_checks.json"), auto_unbox = TRUE, digits = 6, pretty = TRUE)
 cat("revision checks done\n")

@@ -288,5 +288,139 @@
       "SM Versius": 130,
       "SM restart": 141.125
     }
+  },
+  "within_hospital_or_time": {
+    "first100 SM": {
+      "label": "within SM first100",
+      "outcome": "or_time",
+      "estimate": -51.200412,
+      "se": 10.760876,
+      "ci95": [-72.291512, -30.109312],
+      "ci90": [-68.900588, -33.500237],
+      "p": 1.956878e-06,
+      "n_ref": 40,
+      "n_cmp": 80,
+      "crude_ref": 197.375,
+      "crude_cmp": 141.125,
+      "median_ref": 195,
+      "median_cmp": 140
+    },
+    "first100 BE": {
+      "label": "within BE first100",
+      "outcome": "or_time",
+      "estimate": -0.210984,
+      "se": 10.632766,
+      "ci95": [-21.050847, 20.628878],
+      "ci90": [-17.700343, 17.278375],
+      "p": 0.984169,
+      "n_ref": 58,
+      "n_cmp": 20,
+      "crude_ref": 185.87931,
+      "crude_cmp": 187.95,
+      "median_ref": 177.5,
+      "median_cmp": 175
+    },
+    "after_learning_46 SM": {
+      "label": "within SM after_learning_46",
+      "outcome": "or_time",
+      "estimate": 11.68746,
+      "se": 3.90469,
+      "ci95": [4.034237, 19.340683],
+      "ci90": [5.264706, 18.110214],
+      "p": 0.002762,
+      "n_ref": 110,
+      "n_cmp": 177,
+      "crude_ref": 140.545455,
+      "crude_cmp": 150.338983,
+      "median_ref": 130,
+      "median_cmp": 145
+    },
+    "after_learning_46 BE": {
+      "label": "within BE after_learning_46",
+      "outcome": "or_time",
+      "estimate": -11.602017,
+      "se": 4.272899,
+      "ci95": [-19.976756, -3.227278],
+      "ci90": [-18.630318, -4.573717],
+      "p": 0.006623,
+      "n_ref": 181,
+      "n_cmp": 205,
+      "crude_ref": 186.674033,
+      "crude_cmp": 170.897561,
+      "median_ref": 185,
+      "median_cmp": 170
+    },
+    "y2024 SM": {
+      "label": "within SM y2024",
+      "outcome": "or_time",
+      "estimate": 14.063008,
+      "se": 5.391326,
+      "ci95": [3.49619, 24.629826],
+      "ci90": [5.195058, 22.930959],
+      "p": 0.009095,
+      "n_ref": 19,
+      "n_cmp": 80,
+      "crude_ref": 130,
+      "crude_cmp": 141.125,
+      "median_ref": 120,
+      "median_cmp": 140
+    },
+    "y2024 BE": {
+      "label": "within BE y2024",
+      "outcome": "or_time",
+      "estimate": 1.648641,
+      "se": 8.256896,
+      "ci95": [-14.534596, 17.831879],
+      "ci90": [-11.932756, 15.230038],
+      "p": 0.84174,
+      "n_ref": 80,
+      "n_cmp": 25,
+      "crude_ref": 185.675,
+      "crude_cmp": 187.56,
+      "median_ref": 186.5,
+      "median_cmp": 175
+    }
+  },
+  "first50_within_SM": [
+    {
+      "term": "case1_diff_min",
+      "est": -120.626486,
+      "ci95": [-161.629852, -79.62312]
+    },
+    {
+      "term": "slope_versius_per10",
+      "est": -23.602418,
+      "ci95": [-37.844794, -9.360043]
+    },
+    {
+      "term": "slope_dvrestart_per10",
+      "est": -8.911906,
+      "ci95": [-17.230643, -0.593169]
+    },
+    {
+      "term": "slope_diff_per10",
+      "est": 14.690513,
+      "ci95": [-1.401331, 30.782357]
+    }
+  ],
+  "first50_within_SM_n": {
+    "versius": 16,
+    "restart": 50
+  },
+  "first50_within_SM_median": {
+    "Versius": 240,
+    "da Vinci": 127.5
+  },
+  "first50_within_SM_iqr": {
+    "Versius": [213.75, 270],
+    "da Vinci": [110, 153.75]
+  },
+  "robotic_operations_before_first_BE_da_vinci": 420,
+  "early_dv_1_19": {
+    "n": 19,
+    "hospitals": {
+      "SM": 19
+    },
+    "median": 240
   }
 }

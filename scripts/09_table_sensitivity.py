@@ -65,6 +65,14 @@ a3 = c['A3']['a_psm_pt2']
 rows.append(('Post hoc, pT2 margin by Firth penalized logistic regression with the full adjustment set', '–',
              f"first 100 operations {f(fi['first100']['rd'] * 100, 1)} points (95% CI {f(fi['first100']['ci95'][0] * 100, 1)} to {f(fi['first100']['ci95'][1] * 100, 1)}), against {f(a3['estimate'] * 100, 1)} (95% CI {f(a3['ci95'][0] * 100, 1)} to {f(a3['ci95'][1] * 100, 1)}) by ordinary logistic regression. "
              f"Versius cases 47–337 against all restart cases {f(fi['after_learning_46']['rd'] * 100, 1)} points (95% CI {f(fi['after_learning_46']['ci95'][0] * 100, 1)} to {f(fi['after_learning_46']['ci95'][1] * 100, 1)})"))
+wh = rv['within_hospital_or_time']
+def whc(k):
+    x = wh[k]; return f"{f(x['estimate'], 1)} min (95% CI {f(x['ci95'][0], 1)} to {f(x['ci95'][1], 1)}; 90% CI {f(x['ci90'][0], 1)} to {f(x['ci90'][1], 1)}; {x['n_ref']} vs {x['n_cmp']} operations)"
+for key, lab in [('first100', 'first 100 operations on each robot'), ('y2024', 'calendar year 2024'), ('after_learning_46', 'Versius cases 47–337 against all restart cases')]:
+    rows.append((f'Post hoc, operative time within each hospital, {lab}', '–', f"SalveMedica {whc(key + ' SM')}. Bełchatów {whc(key + ' BE')}"))
+f1 = {t['term']: t for t in rv['first50_within_SM']}; n50 = rv['first50_within_SM_n']
+rows.append(('Post hoc, first-50-case model within SalveMedica', f"{int(n50['versius'])} operations, {f(-f1['slope_versius_per10']['est'], 1)} min fall per 10 cases (95% CI {f(-f1['slope_versius_per10']['ci95'][1], 1)} to {f(-f1['slope_versius_per10']['ci95'][0], 1)})",
+             f"{int(n50['restart'])} operations, {f(-f1['slope_dvrestart_per10']['est'], 1)} min fall per 10 cases (95% CI {f(-f1['slope_dvrestart_per10']['ci95'][1], 1)} to {f(-f1['slope_dvrestart_per10']['ci95'][0], 1)}). Difference at case 1 {f(f1['case1_diff_min']['est'], 1)} min (95% CI {f(f1['case1_diff_min']['ci95'][0], 1)} to {f(f1['case1_diff_min']['ci95'][1], 1)})"))
 fb = rv['fixed_basis']; pg = json.load(open(R / 'S_pooled_smooth_tests.json'))
 def fbp(sr):
     ps = [fb[f'{sr} psm_pt2 df{k}']['D1']['p'] for k in (3, 4, 5)]

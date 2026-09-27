@@ -1,0 +1,7 @@
+"comparison","hospital","est","lo","hi","lo90","hi90","n","y"
+"First 100 cases on each robot","SalveMedica",-51.200412,-72.291512,-30.109312,-68.900588,-33.500237,"40 vs 80",3.17
+"First 100 cases on each robot","Bełchatów",-0.210984,-21.050847,20.628878,-17.700343,17.278375,"58 vs 20",2.83
+"Calendar year 2024","SalveMedica",14.063008,3.49619,24.629826,5.195058,22.930959,"19 vs 80",2.17
+"Calendar year 2024","Bełchatów",1.648641,-14.534596,17.831879,-11.932756,15.230038,"80 vs 25",1.83
+"After the Versius learning phase (post hoc)","SalveMedica",11.68746,4.034237,19.340683,5.264706,18.110214,"110 vs 177",1.17
+"After the Versius learning phase (post hoc)","Bełchatów",-11.602017,-19.976756,-3.227278,-18.630318,-4.573717,"181 vs 205",0.83
