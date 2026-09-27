@@ -16,4 +16,4 @@
 | 2024, da Vinci minus Versius, PSA persistence (points) | −6.7 (−19.6 to 6.2), Firth, adjusted for age, log PSA and hospital | −6.1 (−17.8 to 5.6), Firth, parsimonious adjustment | Within Monte Carlo and specification difference |
 | 2024, da Vinci minus Versius, pad-free at 3 months (points) | −4.1 (−25.1 to 16.8) Firth; −4.6 full model | −4.0 (−20.5 to 12.6) | Consistent |
 | 2024, da Vinci minus Versius, pad-free at 12 months (points) | −12.3 (−40.2 to 15.5) Firth; −10.8 full model | −9.9 (−43.2 to 23.4) | Consistent |
-| 2024, 30-day readmission | 0/58 vs 0/82 | 0/58 vs 0/82 | Exact |
+| 2024, 30-day readmission, Versius vs da Vinci, among operations with readmission records | 0/58 vs 0/82 | 0/58 vs 0/82 | Exact |

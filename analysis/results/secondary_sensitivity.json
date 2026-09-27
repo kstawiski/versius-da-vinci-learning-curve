@@ -61,11 +61,11 @@
     "Versius_psm": {
       "nstar": 284,
       "nstar10": null,
-      "asym": 0.336268,
-      "case1": 0.207518,
-      "case50": 0.164035,
-      "case100": 0.137039,
-      "last": 0.380382
+      "asym": 0.336042,
+      "case1": 0.207095,
+      "case50": 0.163955,
+      "case100": 0.137169,
+      "last": 0.380115
     },
     "dVrestart_psm": {
       "nstar": null,

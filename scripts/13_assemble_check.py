@@ -23,17 +23,17 @@ tables = f"""**Table 1.** Patient and tumour characteristics by robotic series a
 
 Values are median (IQR) or n/N (%). Denominators exclude missing values. The da Vinci restart comprises da Vinci cases 20–401, operated from 2024. Da Vinci cases 1–19 were operated in 2021–2023. EAU risk groups follow the European Association of Urology classification. EAU, European Association of Urology. ISUP, International Society of Urological Pathology.
 
-**Table 2.** Perioperative, pathological and functional outcomes by series and learning phase.
+**Table 2.** Perioperative, pathological and functional outcomes by robot, for the first 100 operations and for all operations.
 
 {T2}
 
-Values are median (IQR) or n/N (%). Phases are the surgeon's case numbers on Versius and on the da Vinci restart. Denominators exclude missing values. Clavien-Dindo grades below III are not shown because the registry stopped recording them routinely in 2024. Grades are as recorded in the registry. Of the six Versius reoperations, one was a planned oncological procedure and one had no recorded indication and a grade below III. Blood loss was mostly recorded as rounded estimates and is shown descriptively. PSA persistence includes men operated at least 56 days before data close. Continence at 3 and 12 months includes men operated at least 120 and 425 days before data close, respectively. A dash marks a phase in which no patient had reached the 12-month window.
+Values are median (IQR) or n/N (%). Case numbers are the surgeon's case numbers on Versius and on the da Vinci restart, and outcomes by learning phase are given in Table S2. Denominators exclude missing values. Clavien-Dindo grades below III are not shown because the registry stopped recording them routinely in 2024. Grades are the highest documented at any time, reoperation is as recorded in the operative registry, and transfusion and readmission are within 30 days. Of the six Versius reoperations, one was a planned oncological procedure and one had no recorded indication and a grade below III. Blood loss was mostly recorded as rounded estimates and is shown descriptively. PSA persistence required every value between days 28 and 56 to reach 0.1 ng/mL and includes men operated at least 56 days before data close. Continence at 3 and 12 months includes men whose whole assessment window had elapsed, at least 137 and 456 days before data close.
 
 **Table 3.** Positive surgical margins by hospital, robot and calendar period.
 
 {T3}
 
-Values are n/N (%). The column headed structured margin report gives the share of pathology reports that recorded the margin length in a structured field. Post hoc comparisons in pT2 disease used 95% CIs by the Newcombe method, and a positive difference means a higher rate in the group named first in each comparison. At SalveMedica, the da Vinci restart from January 2024 to June 2025 against Versius in 2021–2023 differed by {ci(k[0])}, and the restart from July 2025 onward by {ci(k[1])}. At Bełchatów, Versius in 2024 against Versius in 2021–2023 differed by {ci(k[2])}, and the whole restart against Versius in 2024 by {ci(k[3])}."""
+Values are n/N (%). Post hoc comparisons in pT2 disease used 95% CIs by the Newcombe method, and a positive difference means a higher rate in the group named first in each comparison. At SalveMedica, the da Vinci restart from January 2024 to June 2025 against Versius in 2021–2023 differed by {ci(k[0])}, and the restart from July 2025 onward by {ci(k[1])}. At Bełchatów, Versius in 2024 against Versius in 2021–2023 differed by {ci(k[2])}, and the whole restart against Versius in 2024 by {ci(k[3])}."""
 t = t.replace('REFERENCES_PLACEHOLDER', refs).replace('TABLES_PLACEHOLDER', tables)
 out.write_text(t)
 

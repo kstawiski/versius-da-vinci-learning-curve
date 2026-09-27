@@ -40,23 +40,23 @@ a = con('A3a initial phase', 'or_time')
 need('A3a', f"{-a.est:.1f} min shorter than the first 100 Versius operations (95% CI {-a.hi95:.1f}–{-a.lo95:.1f}")
 sl = {t['term']: t for t in c3['A3']['slopes_first50']}['case1_diff_min']
 f = con('B1f post hoc, after the Versius learning phase', 'or_time')
-need('B1f or', f"{m(f.est)} min, 90% CI {m(f.lo90)} to {m(f.hi90)}")
+need('B1f or', f"{m(f.est)} min (90% CI {m(f.lo90)} to {m(f.hi90)}, post hoc)")
 fp = con('B1f post hoc, after the Versius learning phase', 'psm_pt2')
 # 2024 (v3 wording: direction stated explicitly)
 x = con('A4 concurrent 2024', 'or_time'); need('A4 or', f"took {m(x.est)} min longer than Versius operations (95% CI {m(x.lo95)} to {m(x.hi95)})")
 x = con('A4 concurrent 2024', 'psm_pt2'); need('A4 pT2', f"{m(x.est)} percentage points higher in pT2 disease (95% CI {m(x.lo95)} to {m(x.hi95)})")
 x = con('A4 concurrent 2024', 'psm_all'); need('A4 all', f"{m(x.est)} points higher at all stages (95% CI {m(x.lo95)} to {m(x.hi95)})")
-x = con('A4 concurrent 2024', 'los'); need('A4 los', f"{x.est:.1f} days longer on da Vinci (95% CI {m(x.lo95).replace('−0.0','−0.0')}")
 a2 = con('A3a initial phase', 'psm_pt2'); need('abstract A3a pT2', f"pT2) disease were {a2.est:.1f} percentage points higher over the first 100 restart than Versius operations (95% CI {a2.lo95:.1f}–{a2.hi95:.1f})")
 need('abstract A3a or', f"{-a.est:.1f} min shorter than the first 100 Versius operations (95% CI {-a.hi95:.1f}–{-a.lo95:.1f})")
 x = con('A4 concurrent 2024', 'or_time'); need('A4 or 90', f"({m(x.lo90)} to {m(x.hi90)} min)")
 # margins
-a = con('A3a initial phase', 'psm_pt2'); need('A3a pT2', f"{a.est:.1f} percentage points more pT2 margins than the first 100 Versius operations (95% CI {a.lo95:.1f}–{a.hi95:.1f})")
+a = con('A3a initial phase', 'psm_pt2'); need('A3a pT2', f"was {a.est:.1f} percentage points higher than over the first 100 Versius operations (95% CI {a.lo95:.1f}–{a.hi95:.1f})")
 need('B1f pT2 body', f"remained {fp.est:.1f} points higher on the restart (95% CI {fp.lo95:.1f}–{fp.hi95:.1f}")
-need('B1f pT2 abstract', f"{fp.est:.1f} points higher after the Versius learning phase (95% CI {fp.lo95:.1f}–{fp.hi95:.1f})")
+need('B1f pT2 abstract', f"{fp.est:.1f} points higher after the Versius learning phase (95% CI {fp.lo95:.1f}–{fp.hi95:.1f}, post hoc)")
 need('R psm c100/c200', f"rose to {r0(100 * cur('dVrestart','psm_pt2',100))}% by case 100 and fell to {r0(100 * cur('dVrestart','psm_pt2',200))}% by case 200")
 pst = json.load(open(R / 'S_pooled_smooth_tests.json'))
-need('R psm p', f"(P = {pst['dVrestart psm_pt2']['pooled']['p']:.2f}, pooled across imputations)")
+rv = json.load(open(R / 'R_revision_checks.json')); fbp = [rv['fixed_basis'][f'dVrestart psm_pt2 df{k}']['D1']['p'] for k in (3, 4, 5)]
+need('R psm p', f"P = {pst['dVrestart psm_pt2']['pooled']['p']:.2f} for the penalized spline and P = {min(fbp):.2f} to {max(fbp):.2f} for fixed-basis splines, pooled across imputations")
 k = list(t3.keys())
 need('SM contrasts', f"+{100 * t3[k[0]]['diff']:.1f} points (95% CI {100 * t3[k[0]]['ci95'][0]:.1f}–{100 * t3[k[0]]['ci95'][1]:.1f}) and {m(100 * t3[k[1]]['diff'])} points (95% CI {m(100 * t3[k[1]]['ci95'][0])} to {m(100 * t3[k[1]]['ci95'][1])})")
 need('BE contrast', f"difference of {100 * t3[k[2]]['diff']:.1f} points (95% CI {100 * t3[k[2]]['ci95'][0]:.1f}–{100 * t3[k[2]]['ci95'][1]:.1f})")
@@ -65,20 +65,20 @@ cu = s['S_cusum']['Versius_racusum']; need('racusum', f"{cu['observed']} observe
 # team curves
 def team(pf, h, x): return float(tc[(tc.platform == pf) & (tc.hospital == h) & (tc.x == x)].est.iloc[0])
 need('SM V', f"fell from {r0(team('Versius','SM',1))} min to {r0(team('Versius','SM',50))} min by hospital case 50 and {r0(team('Versius','SM',100))} min by hospital case 100")
-need('BE V first', f"The first Bełchatów Versius operations took {r0(team('Versius','BE',1))} min")
+need('BE V first', f"after 15 SalveMedica Versius operations, at {r0(team('Versius','BE',1))} min")
 bev = tc[(tc.platform == 'Versius') & (tc.hospital == 'BE') & (tc.x <= 100)].est
 need('BE V range', f"between {r0(bev.min())} and {r0(bev.max())} min up to hospital case 100")
 smd = tc[(tc.platform == 'da Vinci') & (tc.hospital == 'SM')]
-need('SM dV', f"began at {r0(smd.est.iloc[0])} min (95% CI {r0(smd.lo.iloc[0])}–{r0(smd.hi.iloc[0])}), against a long-run level of {r0(smd.sort_values('x').est.tail(50).mean())} min at that hospital, and dipped to {r0(smd.est.min())} min by hospital case {int(smd.x.iloc[smd.est.values.argmin()])}")
+need('SM dV', f"began at {r0(smd.est.iloc[0])} min (95% CI {r0(smd.lo.iloc[0])}–{r0(smd.hi.iloc[0])}) and dipped to {r0(smd.est.min())} min by hospital case {int(smd.x.iloc[smd.est.values.argmin()])}")
 bed = tc[(tc.platform == 'da Vinci') & (tc.hospital == 'BE')]
-need('BE dV', f"The first Bełchatów da Vinci operations took {r0(bed.est.iloc[0])} min, the same as the first Bełchatów Versius operations, and time fell gradually to {r0(bed.est.iloc[-1])} min by hospital case {int(bed.x.max())}")
+need('BE dV', f"at {r0(bed.est.iloc[0])} min, the same as its first Versius operations, and time fell gradually to {r0(bed.est.iloc[-1])} min by hospital case {int(bed.x.max())}")
 checks.append(('BE dV first equals BE V first', f"{r0(bed.est.iloc[0])} == {r0(team('Versius','BE',1))}", r0(bed.est.iloc[0]) == r0(team('Versius','BE',1))))
 ts = json.load(open(R / 'B2_team_curves_summary.json'))
-need('BE dV start', f"began after {ts['da Vinci|BE']['surgeon_platform_case_at_team_start'] - 20} restart operations")
+need('BE dV start', f"began da Vinci surgery after {ts['da Vinci|BE']['surgeon_platform_case_at_team_start'] - 20} restart operations")
 gv = pd.merge(tc[(tc.platform == 'Versius') & (tc.hospital == 'SM')], tc[(tc.platform == 'Versius') & (tc.hospital == 'BE')], on='x')
 gd = pd.merge(smd, bed, on='x')
 need('gaps', f"up to {r0((gv.est_y - gv.est_x).max())} min longer on Versius and up to {r0((gd.est_y - gd.est_x).max())} min longer on da Vinci")
-need('decline 1-50', f"started at {r0(cur('dVrestart','or',1))} min (95% CI {r0(cur('dVrestart','or',1,'lo'))}–{r0(cur('dVrestart','or',1,'hi'))}) and changed by {r0(ph['dVrestart']['point']['decline_1_50'])} min over the first 50 cases (95% CI {r0(ph['dVrestart']['ci95']['decline_1_50'][0])} to {r0(ph['dVrestart']['ci95']['decline_1_50'][1])}), against {r0(ph['Versius']['point']['decline_1_50'])} min on Versius (95% CI {r0(ph['Versius']['ci95']['decline_1_50'][0])}–{r0(ph['Versius']['ci95']['decline_1_50'][1])})")
+need('decline 1-50', f"started at {r0(cur('dVrestart','or',1))} min (95% CI {r0(cur('dVrestart','or',1,'lo'))}–{r0(cur('dVrestart','or',1,'hi'))}) (Figure 2A). It fell by {r0(ph['dVrestart']['point']['decline_1_50'])} min over the first 50 cases (95% CI {r0(ph['dVrestart']['ci95']['decline_1_50'][0])} to {r0(ph['dVrestart']['ci95']['decline_1_50'][1])}), against {r0(ph['Versius']['point']['decline_1_50'])} min on Versius (95% CI {r0(ph['Versius']['ci95']['decline_1_50'][0])}–{r0(ph['Versius']['ci95']['decline_1_50'][1])})")
 cs = json.load(open(R / 'B1f_cutoff_sensitivity.json'))
 checks.append(('cutoff 46 rerun equals B1f', f"{cs['after_46']['or_time']['estimate']:.6f} == {f.est:.6f}", abs(cs['after_46']['or_time']['estimate'] - f.est) < 1e-6))
 need('cutoff sens', f"differed by {m(cs['after_30']['or_time']['estimate'])} and {m(cs['after_43']['or_time']['estimate'])} min, and pT2 margins were {100 * cs['after_30']['psm_pt2']['estimate']:.1f} and {100 * cs['after_43']['psm_pt2']['estimate']:.1f} points higher")
@@ -87,7 +87,6 @@ q = pd.read_csv(WS / 'figures/source_data/fig1A_quarterly_counts.csv'); qq = q.g
 peak = qq.idxmax()
 checks.append(('volume peak quarter (info)', f"{peak} with {qq.max()} operations", peak.startswith('2025')))
 # bootstrap statement
-need('boot 98%', f"Both plateau cutoffs were reached in {round(100 * b1['share_reached']):.0f}% of bootstrap replicates, and among these the operative-time difference stayed within the equivalence margin in {round(100 * b1['or_time']['share_within_15']):.0f}%")
 
 # v11: prespecified first-50-case slopes (A3a), A3c, 2024 overlap and ascertainment
 sl50 = {t['term']: t for t in c3['A3']['slopes_first50']}
@@ -100,15 +99,54 @@ need('A3a abstract slope', f"fell by {-sd_['est']:.1f} min per 10 cases over the
 a3c = c3['A3']['c']
 need('A3c', f"Akaike information criterion {r0(a3c['aic_platform'])} against {r0(a3c['aic_cumulative'])}")
 ovl = json.load(open(R / 'S_overlap_2024.json')); oo = ovl['overlap_or_time']
-need('overlap n', f"{ovl['n_in_overlap_cells']} of {ovl['n_2024']} operations")
+need('overlap n', f"{ovl['n_in_overlap_cells']} of the {ovl['n_2024']} operations took place in hospital-quarters")
 need('overlap time', f"{oo['estimate']:.1f} min longer (95% CI {m(oo['ci95'][0])} to {oo['ci95'][1]:.1f}, post hoc)")
 ga = ovl['grade_available']
 need('grades', f"recorded for {ga['Versius'][0]} of {ga['Versius'][1]} Versius operations ({round(100*ga['Versius'][0]/ga['Versius'][1])}%) and {ga['restart'][0]} of {ga['restart'][1]} restart operations ({round(100*ga['restart'][0]/ga['restart'][1])}%)")
 need('readmission ascertained', f"among {ga['Versius'][4]} Versius and {ga['restart'][4]} restart operations with readmission records")
-need('reop graded below III', "one was a planned oncological procedure and one had no recorded indication and a registry grade below III" if ga['Versius'][3] == 2 else "MISMATCH")
+need('reop graded below III', "one was a planned oncological procedure and one had no recorded indication and a grade below III" if ga['Versius'][3] == 2 else "MISMATCH")
 f24 = ovl['functional_2024']
 need('pad 12m recorded 2024', f"after {f24['Versius']['pad_free_12m'][0]} of {f24['Versius']['pad_free_12m'][1]} Versius and {f24['restart']['pad_free_12m'][0]} of {f24['restart']['pad_free_12m'][1]} restart operations")
 need('plateau non-attainment', f"not met in {pl['Versius or']['boot_primary']['n_not_reached'] if 'n_not_reached' in pl['Versius or']['boot_primary'] else 790} of 2000 bootstrap replicates")
+
+# v18: revision analyses
+fi = rv['firth']['first100']
+need('Firth first100', f"{100 * fi['rd']:.1f} points higher with Firth regression (95% CI {100 * fi['ci95'][0]:.1f}–{100 * fi['ci95'][1]:.1f})")
+hm = rv['hospital_months_2024']
+need('hospital-months', f"Only {hm['n']} operations, {hm['by_robot']['Versius']} on Versius and {hm['by_robot']['restart']} on da Vinci, took place in hospital-months that used both robots")
+need('hospital-months abstract', f"only {hm['n']} of {ovl['n_2024']} operations took place in hospital-months that used both robots")
+need('hospital-months limitations', f"only {hm['n']} of {ovl['n_2024']} operations took place in hospital-months that used both robots, with no record")
+yc = rv['y2024_crude']; bh = yc['by_hospital_n']
+need('2024 crude', f"{r0(yc['or_time_mean']['Versius'])} min on Versius and {r0(yc['or_time_mean']['restart'])} min on da Vinci. Recorded times were longer at Bełchatów on both robots, and {bh['BE Versius']} of {bh['BE Versius'] + bh['SM Versius']} Versius operations took place there, against {bh['BE restart']} of {bh['SM restart'] + bh['BE restart']} da Vinci operations")
+checks.append(('BE longer on both robots in 2024', str(yc['or_time_mean_by_hospital']), yc['or_time_mean_by_hospital']['BE Versius'] > yc['or_time_mean_by_hospital']['SM Versius'] and yc['or_time_mean_by_hospital']['BE restart'] > yc['or_time_mean_by_hospital']['SM restart']))
+oc = ovl['overlap_counts']['psm_pt2']
+need('overlap pT2', f"pT2 margins were positive in {oc['ref'][0]} of {oc['ref'][1]} Versius and {oc['cmp'][0]} of {oc['cmp'][1]} da Vinci operations")
+ev = json.load(open(R / 'R_endpoint_verification.json')); st = ev['strata'].values()
+need('clock agreement', f"within 15 min in {sum(x['clock_concordant'] for x in st)} of {sum(x['clock_concordance_assessed'] for x in st)} operations")
+need('R status', f"in {sum(x['R_concordant_positive'] for x in st)} of {sum(x['R_assessed_positive'] for x in st)} positive and all {sum(x['R_assessed_negative'] for x in st)} negative margins" if sum(x['R_concordant_negative'] for x in st) == sum(x['R_assessed_negative'] for x in st) else 'MISMATCH')
+import datetime as _dt
+dc = _dt.date.fromisoformat(ev['data_close']); need('data close', f"Data closed on {dc.day} {dc.strftime('%B')} {dc.year}")
+sm = ev['robot_start_months']; mon = lambda k: _dt.date.fromisoformat(sm[k] + '-01').strftime('%B %Y')
+need('robot months', f"used from {mon('Versius SM')} at SalveMedica and from {mon('Versius BE')} at Bełchatów, and da Vinci (Intuitive Surgical, Sunnyvale, CA, USA), used at SalveMedica and from {mon('da Vinci BE')} at Bełchatów")
+need('restart month', f"da Vinci case 20 in {mon('restart')}")
+rm_ = ev['robot_model_all_da_vinci']; nx = rm_.get('da Vinci X', 0) + rm_.get('da Vinci Xi', 0) + rm_.get('da Vinci Si', 0)
+need('dV generation', f"named in {nx} of {sum(rm_.values())} operative notes, both at Bełchatów (da Vinci X)" if nx == rm_.get('da Vinci X', 0) == ev['strata']['Bełchatów da Vinci restart']['robot_model_generation_named'] else 'MISMATCH')
+pr = ev['psa_rule']['not_persistent_under_all_rule_but_one_value_ge_0_1']
+need('PSA rule', "Requiring every value rather than any value to reach 0.1 ng/mL classified one restart patient as not persistent" if (pr['da Vinci restart'] == 1 and pr['Versius'] == 0) else 'MISMATCH')
+bs = pd.read_csv(R / 'B4_outcomes_by_series.csv').set_index('series')
+def fr(s_): a_, b_ = map(int, s_.split('/')); return a_, b_, round(100 * a_ / b_)
+v3, r3 = fr(bs.loc['Versius', 'pf3']), fr(bs.loc['dV restart', 'pf3'])
+need('pad-free 3m', f"{v3[0]} of {v3[1]} Versius patients ({v3[2]}%) and {r3[0]} of {r3[1]} restart patients ({r3[2]}%)")
+v12, r12 = fr(bs.loc['Versius', 'pf12']), fr(bs.loc['dV restart', 'pf12'])
+need('pad-free 12m', f"{v12[0]} of {v12[1]} ({v12[2]}%) and {r12[0]} of {r12[1]} ({r12[2]}%) were pad-free")
+t2 = pd.read_csv(WS / 'tables/table2_outcomes.csv', index_col=0)
+o1v = t2.loc['At most one pad per day, 12 months', 'Versius, all'].split(' ')[0]; o1r = t2.loc['At most one pad per day, 12 months', 'da Vinci restart, all'].split(' ')[0]
+fo = lambda s_: f"{s_.split('/')[0]} of {s_.split('/')[1]} ({round(100 * int(s_.split('/')[0]) / int(s_.split('/')[1]))}%)"
+need('one pad 12m', f"{fo(o1v)} and {fo(o1r)} used at most one pad per day")
+pv_, pr_ = fr(bs.loc['Versius', 'psa_pers']), fr(bs.loc['dV restart', 'psa_pers'])
+need('PSA persistence', f"{pv_[0]} of {pv_[1]} Versius operations ({pv_[2]}%) and {pr_[0]} of {pr_[1]} restart operations ({pr_[2]}%)")
+checks.append(('pad-free 3m in Table 2 equals series file', f"{t2.loc['Pad-free, 3 months', 'Versius, all']} ~ {bs.loc['Versius', 'pf3']}", t2.loc['Pad-free, 3 months', 'Versius, all'].startswith(bs.loc['Versius', 'pf3'])))
+rs = s['S_rcs']['dVrestart_or']; need('rcs restart', f"a restart curve that rose from {r0(rs['case1'])} to {r0(rs['case50'])} min")
 ok = all(c[2] for c in checks)
 for c in checks: print(('OK   ' if c[2] else 'FAIL ') + c[0] + ' :: ' + c[1])
 print('ALL_BOUND' if ok else 'BINDING_FAILURES')

@@ -52,7 +52,7 @@ res['percentage_errors'] = bad
 text_main = T.split('## Introduction', 1)[1].split('## References', 1)[0]
 inv = {}
 for kind, pat in [('Figure', r'Figures? (\d)(?:[A-D])?(?:\s*(?:and|–)\s*(\d))?'), ('Table', r'Tables? (\d)(?:\s*(?:and|–)\s*(\d))?'),
-                  ('Table S', r'Table S(\d)'), ('Figure S', r'Figures? S(\d)'), ('Appendix S', r'Appendix S(\d)')]:
+                  ('Table S', r'Tables? S(\d)(?:\s*(?:and|–|to)\s*S?(\d))?'), ('Figure S', r'Figures? S(\d)'), ('Appendix S', r'Appendix S(\d)')]:
     order = []
     for m in re.finditer(pat, text_main):
         for g in m.groups():
@@ -62,7 +62,7 @@ res['callouts_first_mention_order'] = inv
 legends = T.split('## Figure legends', 1)[1].split('\n## ', 1)[0]
 tables = T.split('## Tables', 1)[1].split('## Figure legends', 1)[0]
 res['supplied_items'] = {'Figure': re.findall(r'(?m)^\*\*Figure (\d)\.\*\*', legends), 'Table': re.findall(r'(?m)^\*\*Table (\d)\.\*\*', tables),
-                         **{k: re.findall(rf'(?m)^## {k}(\d)\.', S) for k in ['Table S', 'Figure S', 'Appendix S']}}
+                         **{k: re.findall(rf'(?m)^#{{2,3}} {k}(\d)\.', S) for k in ['Table S', 'Figure S', 'Appendix S']}}
 res['callouts_match_supplied'] = {k: inv[k] == v for k, v in res['supplied_items'].items()}
 
 # 5. Citation coverage per paragraph in Introduction and Discussion.

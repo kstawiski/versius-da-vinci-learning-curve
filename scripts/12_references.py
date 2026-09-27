@@ -7,7 +7,7 @@ WS = Path(__file__).resolve().parents[1]
 ORDER = ['FernandezConejo2026BJU', 'Almeida2025', 'Chen2025', 'Reitano2025', 'Chierigo2026', 'Ficarra2024', 'Hammadeh2026',
          'Antonelli2025Minerva', 'Yu2026', 'Gavi2025', 'Liu2025', 'Roberts2025', 'vonElm2007', 'McCulloch2009', 'Benchimol2015', 'Dindo2004',
          'Wood2011', 'Duan1983', 'vanBuuren2011', 'Muggeo2003', 'Firth1993', 'Heinze2002', 'Steiner2000', 'Biau2008',
-         'Newcombe1998', 'Bravi2024PSM', 'Vickers2007', 'Meneghetti2026', 'Mangano2021']
+         'Newcombe1998', 'Antonelli2026JRS', 'Bravi2024PSM', 'Vickers2007', 'Meneghetti2026', 'Mangano2021']
 doi = {}
 for f in ['evidence/literature/references.csv', 'evidence/literature/references_methods.csv']:
     for r in csv.DictReader(open(WS / f)): doi[r['key']] = r['doi']
@@ -42,7 +42,7 @@ JMAP = {'BJU International': 'BJU Int', 'Int. braz j urol.': 'Int Braz J Urol', 
         'JNCI Journal of the National Cancer Institute': 'J Natl Cancer Inst'}
 AFIX = {'ANTONELLI A, VECCIA A, MALANDRA S': 'Antonelli A, Veccia A, Malandra S', 'Buuren Sv, Groothuis-Oudshoorn K': 'van Buuren S, Groothuis-Oudshoorn K',
         'FIRTH D': 'Firth D', 'Chen Sy, Ma Y, Yang Jw, Liu H, Wang L, Li Xr': 'Chen SY, Ma Y, Yang JW, Liu H, Wang L, Li XR', 'Fernández‐Conejo': 'Fernández-Conejo', 'Steiner SH. Monitoring surgical': 'Steiner SH, Cook RJ, Farewell VT, Treasure T. Monitoring surgical'}  # Crossref lists one author; PubMed 12933566 lists four
-TFIX = {'inR': 'in R', 'break‐points': 'break-points', 'Versius‐assisted': 'Versius-assisted', '18‐Month of Follow‐Up': '18-Month of Follow-Up'}
+TFIX = {'vs. versius robotic': 'vs. Versius robotic', ': (the COMPAR-P trial)': ' (the COMPAR-P trial)', 'inR': 'in R', 'break‐points': 'break-points', 'Versius‐assisted': 'Versius-assisted', '18‐Month of Follow‐Up': '18-Month of Follow-Up'}
 lines = []
 for o in out:
     r = o['reference']

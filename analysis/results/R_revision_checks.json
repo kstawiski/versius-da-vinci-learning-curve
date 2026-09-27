@@ -1,0 +1,292 @@
+{
+  "label": "POST HOC robustness checks for the revision (Firth contrasts, fixed-basis curve tests, 2024 hospital-months)",
+  "firth": {
+    "first100": {
+      "adjustment": "age + bmi + log_psa + isup_cat + log_weight + centre",
+      "n_ref": 49,
+      "n_cmp": 59,
+      "events_ref": 11,
+      "events_cmp": 23,
+      "rd": 0.195876,
+      "ci95": [0.014975, 0.376778],
+      "ci90": [0.044059, 0.347694],
+      "p": 0.03382,
+      "or_median": 2.613665
+    },
+    "after_learning_46": {
+      "adjustment": "age + bmi + log_psa + isup_cat + log_weight + centre",
+      "n_ref": 156,
+      "n_cmp": 231,
+      "events_ref": 29,
+      "events_cmp": 69,
+      "rd": 0.096741,
+      "ci95": [0.011102, 0.182381],
+      "ci90": [0.02487, 0.168612],
+      "p": 0.026826,
+      "or_median": 1.721467
+    },
+    "y2024": {
+      "adjustment": "age + bmi + log_psa + isup_cat + log_weight + centre",
+      "n_ref": 48,
+      "n_cmp": 61,
+      "events_ref": 14,
+      "events_cmp": 23,
+      "rd": 0.077086,
+      "ci95": [-0.133594, 0.287765],
+      "ci90": [-0.099722, 0.253893],
+      "p": 0.473292,
+      "or_median": 1.458087
+    }
+  },
+  "fixed_basis": {
+    "Versius psm_pt2 df3": {
+      "D1": {
+        "D1": 2.318611,
+        "df1": 3,
+        "df2": 2914954.884808,
+        "p": 0.073319
+      },
+      "D2_lr": {
+        "D2": 2.431776,
+        "df1": 3,
+        "df2": 1303285.297564,
+        "p": 0.063058
+      },
+      "lr_p_per_imputation_median": 0.061101
+    },
+    "Versius psm_pt2 df4": {
+      "D1": {
+        "D1": 1.747347,
+        "df1": 4,
+        "df2": 3546127.326853,
+        "p": 0.13645
+      },
+      "D2_lr": {
+        "D2": 1.833293,
+        "df1": 4,
+        "df2": 1496429.210426,
+        "p": 0.119295
+      },
+      "lr_p_per_imputation_median": 0.11633
+    },
+    "Versius psm_pt2 df5": {
+      "D1": {
+        "D1": 1.437949,
+        "df1": 5,
+        "df2": 5623784.921221,
+        "p": 0.206907
+      },
+      "D2_lr": {
+        "D2": 1.566274,
+        "df1": 5,
+        "df2": 1010084.403476,
+        "p": 0.165778
+      },
+      "lr_p_per_imputation_median": 0.157785
+    },
+    "Versius or df3": {
+      "D1": {
+        "D1": 13.664376,
+        "df1": 3,
+        "df2": 1304812.876507,
+        "p": 6.563198e-09
+      },
+      "D2_lr": {
+        "D2": 13.436845,
+        "df1": 3,
+        "df2": 98865.177975,
+        "p": 9.192327e-09
+      },
+      "lr_p_per_imputation_median": 8.332633e-09
+    },
+    "Versius or df4": {
+      "D1": {
+        "D1": 10.853949,
+        "df1": 4,
+        "df2": 1637458.759798,
+        "p": 8.48537e-09
+      },
+      "D2_lr": {
+        "D2": 10.675092,
+        "df1": 4,
+        "df2": 101039.142278,
+        "p": 1.198939e-08
+      },
+      "lr_p_per_imputation_median": 1.160968e-08
+    },
+    "Versius or df5": {
+      "D1": {
+        "D1": 10.519353,
+        "df1": 5,
+        "df2": 2174842.471611,
+        "p": 4.070666e-10
+      },
+      "D2_lr": {
+        "D2": 10.236275,
+        "df1": 5,
+        "df2": 90244.450039,
+        "p": 7.990788e-10
+      },
+      "lr_p_per_imputation_median": 5.632073e-10
+    },
+    "dVrestart psm_pt2 df3": {
+      "D1": {
+        "D1": 3.169326,
+        "df1": 3,
+        "df2": 1286265.265632,
+        "p": 0.023247
+      },
+      "D2_lr": {
+        "D2": 3.363194,
+        "df1": 3,
+        "df2": 267789.12379,
+        "p": 0.017821
+      },
+      "lr_p_per_imputation_median": 0.016484
+    },
+    "dVrestart psm_pt2 df4": {
+      "D1": {
+        "D1": 2.400251,
+        "df1": 4,
+        "df2": 2527025.229916,
+        "p": 0.047713
+      },
+      "D2_lr": {
+        "D2": 2.503323,
+        "df1": 4,
+        "df2": 327174.590408,
+        "p": 0.040206
+      },
+      "lr_p_per_imputation_median": 0.03738
+    },
+    "dVrestart psm_pt2 df5": {
+      "D1": {
+        "D1": 2.004962,
+        "df1": 5,
+        "df2": 4159706.113611,
+        "p": 0.074536
+      },
+      "D2_lr": {
+        "D2": 2.134743,
+        "df1": 5,
+        "df2": 276384.558395,
+        "p": 0.05825
+      },
+      "lr_p_per_imputation_median": 0.053976
+    },
+    "dVrestart or df3": {
+      "D1": {
+        "D1": 8.769374,
+        "df1": 3,
+        "df2": 11593161.655379,
+        "p": 8.220729e-06
+      },
+      "D2_lr": {
+        "D2": 8.875996,
+        "df1": 3,
+        "df2": 42045415.968868,
+        "p": 7.045203e-06
+      },
+      "lr_p_per_imputation_median": 6.822316e-06
+    },
+    "dVrestart or df4": {
+      "D1": {
+        "D1": 6.282497,
+        "df1": 4,
+        "df2": 19847122.516489,
+        "p": 0.000047
+      },
+      "D2_lr": {
+        "D2": 6.383543,
+        "df1": 4,
+        "df2": 28500584.049929,
+        "p": 0.000039
+      },
+      "lr_p_per_imputation_median": 0.000039
+    },
+    "dVrestart or df5": {
+      "D1": {
+        "D1": 7.279898,
+        "df1": 5,
+        "df2": 13854155.037051,
+        "p": 7.901362e-07
+      },
+      "D2_lr": {
+        "D2": 7.309793,
+        "df1": 5,
+        "df2": 9394993.581425,
+        "p": 7.375219e-07
+      },
+      "lr_p_per_imputation_median": 7.473154e-07
+    }
+  },
+  "hospital_months_2024": {
+    "cells": [
+      {
+        "centre": "SM",
+        "month": 3
+      },
+      {
+        "centre": "SM",
+        "month": 4
+      },
+      {
+        "centre": "SM",
+        "month": 5
+      }
+    ],
+    "n": 33,
+    "by_robot": {
+      "Versius": 19,
+      "restart": 14
+    },
+    "or_time_mean": {
+      "Versius": 130,
+      "restart": 134.285714
+    },
+    "or_time_median": {
+      "Versius": 120,
+      "restart": 127.5
+    },
+    "or_time_q1": {
+      "Versius": 112.5,
+      "restart": 111.25
+    },
+    "or_time_q3": {
+      "Versius": 142.5,
+      "restart": 153.75
+    },
+    "unadjusted_mean_difference_restart_minus_versius": 4.285714,
+    "welch_ci95": [-14.369176, 22.940605],
+    "psm_pt2": {
+      "Versius": [2, 7],
+      "restart": [1, 7]
+    },
+    "psm_all": {
+      "Versius": [4, 17],
+      "restart": [3, 14]
+    }
+  },
+  "y2024_crude": {
+    "or_time_mean": {
+      "Versius": 174.989899,
+      "restart": 152.180952
+    },
+    "or_time_median": {
+      "Versius": 170,
+      "restart": 150
+    },
+    "by_hospital_n": {
+      "BE Versius": 80,
+      "BE restart": 25,
+      "SM Versius": 19,
+      "SM restart": 80
+    },
+    "or_time_mean_by_hospital": {
+      "BE Versius": 185.675,
+      "BE restart": 187.56,
+      "SM Versius": 130,
+      "SM restart": 141.125
+    }
+  }
+}

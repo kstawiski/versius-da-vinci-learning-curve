@@ -1,6 +1,6 @@
 # Code and aggregate outputs
 
-From Versius to da Vinci: operative time and surgical margins in 738 single-surgeon prostatectomies. Version 1.1.3.
+From Versius to da Vinci: operative time and surgical margins in 738 single-surgeon prostatectomies. Version 1.1.4.
 
 The archive contains analysis code and aggregate outputs only. No patient-level rows, identifiers or source documents are included. The patient-level research database is restricted under institutional approval and cannot be shared.
 
@@ -13,7 +13,9 @@ The archive contains analysis code and aggregate outputs only. No patient-level 
   - `03_primary.R`: learning curves, plateaus, first-100 comparisons, first-50-case slope models (A3a), cumulative versus platform-specific experience (A3c) and the 2024 comparison.
   - `03b`–`03f`: sparse-outcome models, the mature-phase bootstrap, cutoff sensitivity, smooth-term tests pooled across imputations (D2 rule) and the 2024 overlap and ascertainment analysis.
   - `04_secondary.R`, `04b_davies.R`, `06_posthoc_learning_metrics.R`, `07_team_curves.R`: sensitivity analyses, CUSUM charts, post hoc learning metrics and hospital-specific curves.
-  - `05_*.R`: figures. `08`–`11` and `21`: tables. `12`–`14`, `16`, `17`, `19`, `20`: references, manuscript assembly, number binding, document build and technical audit.
+  - `23_revision_checks.R`: Firth penalized pT2 margin contrasts, fixed-basis curve tests pooled by the D1 and D2 rules, and the 2024 hospital-month comparison.
+  - `24_endpoint_verification.py`: agreement of the primary endpoints with independently recorded fields and observed values by variable.
+  - `05_*.R`: figures. `08`–`11` and `21`: tables. `12`–`14`, `16`, `17`, `19`, `20`, `22`: references, manuscript assembly, number binding, document build and technical audits.
 - `analysis/results/`: aggregate results written by the scripts (JSON and CSV).
 - `figures/source_data/`: aggregate data behind the figures.
 - `tables/`: the rendered tables.

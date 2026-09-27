@@ -211,12 +211,12 @@
   "functional_series": {
     "Versius": {
       "pad_free_3m": [152, 337],
-      "pad_free_12m": [83, 337],
+      "pad_free_12m": [81, 333],
       "psa_persistence": [144, 337]
     },
     "restart": {
-      "pad_free_3m": [130, 346],
-      "pad_free_12m": [50, 130],
+      "pad_free_3m": [126, 340],
+      "pad_free_12m": [42, 105],
       "psa_persistence": [164, 374]
     }
   },

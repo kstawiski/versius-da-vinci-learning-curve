@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Table 3 (post hoc, labelled): positive margins by hospital, robot and calendar period, with the share of
-structured margin reports. Aggregate only."""
+"""Table 3 (post hoc, labelled): positive margins by hospital, robot and calendar period. Aggregate only.
+The registry margin-length entry is not tabulated here because before 2024 it was completed mainly for positive
+margins, so it does not measure pathology report format (see 24_endpoint_verification.py)."""
 import re, sys
 from pathlib import Path
 import numpy as np, pandas as pd
@@ -9,7 +10,6 @@ d = pd.read_parquet(WS / 'analysis/restricted/ms6_analysis_dataset.parquet'); r 
 h1 = r.surgery_date.dt.month <= 6
 r['period'] = np.select([r.year <= 2023, r.year == 2024, (r.year == 2025) & h1], ['2021–2023', '2024', 'Jan–Jun 2025'], 'Jul 2025–Feb 2026')
 r['robot'] = np.where(r.platform == 'Versius', 'Versius', np.where(r.platform_n < 20, 'da Vinci, cases 1–19', 'da Vinci restart'))
-r['structured'] = (r.psm_length_relation.fillna('').replace('None', '') != '').astype(float)
 def np_(x):
     x = x.dropna(); return f"{int(x.sum())}/{len(x)} ({100 * x.mean():.0f}%)" if len(x) else '–'
 rows = []
@@ -20,7 +20,6 @@ for c, cn in [('SM', 'SalveMedica'), ('BE', 'Bełchatów')]:
             g = r[(r.centre == c) & (r.period == per) & (r.robot == rb)]
             if len(g) == 0: continue
             rows.append({'Hospital': cn, 'Period': per, 'Robot': rb, 'Operations': len(g),
-                         'Structured margin report': f"{100 * g.structured.mean():.0f}%",
                          'Positive margin, pT2': np_(g.psm_pt2), 'Positive margin, all stages': np_(g.psm),
                          'pT3 or higher': np_(g.pT3plus), 'Nerve sparing': np_(g.nerve_sparing)})
 T = pd.DataFrame(rows)

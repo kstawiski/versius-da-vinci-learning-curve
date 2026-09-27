@@ -68,16 +68,23 @@ def t2(g):
     r['Reoperation'] = npct(g.reoperation)
     r['Transfusion within 30 days'] = npct(g.transfusion_30d)
     r['Readmission within 30 days'] = npct(g.readmission_30d)
-    r['PSA persistence (EAU)'] = npct(g.psa_persistence_eau, g.days_open >= 56)
-    r['At most one pad per day, 3 months'] = npct(g.pads_3m.where(g.pads_3m.isna(), g.pads_3m <= 1), g.days_open >= 120)
-    r['At most one pad per day, 12 months'] = npct(g.pads_12m.where(g.pads_12m.isna(), g.pads_12m <= 1), g.days_open >= 425)
-    r['Pad-free, 12 months'] = npct(g.pad_free_12m, g.days_open >= 425)
+    r['PSA persistence (EAU-based)'] = npct(g.psa_persistence_eau, g.days_open >= 56)
+    # functional outcomes only in men whose whole assessment window (days 46-137 and 320-456) had elapsed
+    r['Pad-free, 3 months'] = npct(g.pad_free_3m, g.days_open >= 137)
+    r['At most one pad per day, 3 months'] = npct(g.pads_3m.where(g.pads_3m.isna(), g.pads_3m <= 1), g.days_open >= 137)
+    r['Pad-free, 12 months'] = npct(g.pad_free_12m, g.days_open >= 456)
+    r['At most one pad per day, 12 months'] = npct(g.pads_12m.where(g.pads_12m.isna(), g.pads_12m <= 1), g.days_open >= 456)
     return pd.Series(r)
-cols = {'Versius': rob[rob.platform == 'Versius'], 'da Vinci restart': rob[rob.series == 'da Vinci restart']}
+V, RS = rob[rob.platform == 'Versius'], rob[rob.series == 'da Vinci restart']
+main_cols = {'Versius, cases 1-100': V[V.platform_n <= 100], 'Versius, all': V,
+             'da Vinci restart, cases 1-100': RS[RS.platform_n - 19 <= 100], 'da Vinci restart, all': RS}
+T2 = pd.DataFrame({k: t2(v) for k, v in main_cols.items()})
+T2.to_csv(OUT / 'table2_outcomes.csv')
+cols = {}
 for ph in ['Versius 1-50', 'Versius 51-100', 'Versius 101-200', 'Versius 201-337', 'Restart 1-50', 'Restart 51-100', 'Restart 101-200', 'Restart 201-382']:
     cols[ph] = rob[rob.phase == ph]
-T2 = pd.DataFrame({k: t2(v) for k, v in cols.items()})
-T2.to_csv(OUT / 'table2_outcomes.csv')
+TS = pd.DataFrame({k: t2(v) for k, v in cols.items()})
+TS.to_csv(OUT / 'tableS_outcomes_by_phase.csv')
 
 # Supplementary: margins by calendar period and hospital, and structured reporting
 rob['period'] = np.select([rob.year <= 2023, rob.year == 2024], ['2021-2023', '2024'], '2025-2026')
@@ -98,6 +105,7 @@ def to_md(df, index=True):
     return '\n'.join([head, sep] + body)
 (OUT / 'table1_case_mix.md').write_text(to_md(T1.rename_axis('Characteristic')))
 (OUT / 'table2_outcomes.md').write_text(to_md(T2.rename_axis('Outcome')))
+(OUT / 'tableS_outcomes_by_phase.md').write_text(to_md(TS.rename_axis('Outcome')))
 (OUT / 'tableS_margins_by_period.md').write_text(to_md(S1, index=False))
 for p in OUT.glob('*'):
     if p.is_file() and re.search(r'\b(19|20)\d\d-\d\d-\d\d\b', p.read_text(errors='ignore')):

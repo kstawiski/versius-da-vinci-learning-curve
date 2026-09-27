@@ -1,0 +1,464 @@
+{
+ "label": "POST HOC endpoint provenance and cross-source agreement",
+ "strata": {
+  "SalveMedica Versius": {
+   "operations": 128,
+   "date_corrected_against_registry": 6,
+   "robot_model_generation_named": 0,
+   "robot_model_generation_values": {
+    "Versius": 125,
+    "": 3
+   },
+   "platform_conflict_flag": 0,
+   "or_time_recorded": 126,
+   "or_time_from_start_end_clock": 126,
+   "or_time_duration_only": 0,
+   "clock_concordant": 126,
+   "clock_concordance_assessed": 126,
+   "or_time_registry_conflict": 0,
+   "pT_recorded": 128,
+   "pT_registry_conflict": 0,
+   "margin_recorded": 124,
+   "margin_positive": 44,
+   "margin_negative": 80,
+   "R_concordant_positive": 38,
+   "R_assessed_positive": 38,
+   "R_concordant_negative": 78,
+   "R_assessed_negative": 78,
+   "positive_with_length_field": 44,
+   "positive_with_length_value": 28,
+   "negative_with_length_field": 80,
+   "length_field_present": 128,
+   "margin_length_registry_conflict": 0
+  },
+  "SalveMedica da Vinci restart": {
+   "operations": 177,
+   "date_corrected_against_registry": 2,
+   "robot_model_generation_named": 0,
+   "robot_model_generation_values": {
+    "da Vinci, generation not specified": 125,
+    "": 52
+   },
+   "platform_conflict_flag": 0,
+   "or_time_recorded": 177,
+   "or_time_from_start_end_clock": 177,
+   "or_time_duration_only": 0,
+   "clock_concordant": 177,
+   "clock_concordance_assessed": 177,
+   "or_time_registry_conflict": 0,
+   "pT_recorded": 175,
+   "pT_registry_conflict": 0,
+   "margin_recorded": 167,
+   "margin_positive": 61,
+   "margin_negative": 106,
+   "R_concordant_positive": 59,
+   "R_assessed_positive": 60,
+   "R_concordant_negative": 105,
+   "R_assessed_negative": 105,
+   "positive_with_length_field": 61,
+   "positive_with_length_value": 39,
+   "negative_with_length_field": 106,
+   "length_field_present": 177,
+   "margin_length_registry_conflict": 0
+  },
+  "Bełchatów Versius": {
+   "operations": 209,
+   "date_corrected_against_registry": 0,
+   "robot_model_generation_named": 0,
+   "robot_model_generation_values": {
+    "Versius": 142,
+    "": 67
+   },
+   "platform_conflict_flag": 0,
+   "or_time_recorded": 209,
+   "or_time_from_start_end_clock": 207,
+   "or_time_duration_only": 2,
+   "clock_concordant": 200,
+   "clock_concordance_assessed": 206,
+   "or_time_registry_conflict": 1,
+   "pT_recorded": 208,
+   "pT_registry_conflict": 0,
+   "margin_recorded": 204,
+   "margin_positive": 48,
+   "margin_negative": 156,
+   "R_concordant_positive": 45,
+   "R_assessed_positive": 47,
+   "R_concordant_negative": 156,
+   "R_assessed_negative": 156,
+   "positive_with_length_field": 47,
+   "positive_with_length_value": 32,
+   "negative_with_length_field": 55,
+   "length_field_present": 104,
+   "margin_length_registry_conflict": 0
+  },
+  "Bełchatów da Vinci restart": {
+   "operations": 205,
+   "date_corrected_against_registry": 0,
+   "robot_model_generation_named": 2,
+   "robot_model_generation_values": {
+    "da Vinci, generation not specified": 141,
+    "": 62,
+    "da Vinci X": 2
+   },
+   "platform_conflict_flag": 0,
+   "or_time_recorded": 205,
+   "or_time_from_start_end_clock": 205,
+   "or_time_duration_only": 0,
+   "clock_concordant": 205,
+   "clock_concordance_assessed": 205,
+   "or_time_registry_conflict": 0,
+   "pT_recorded": 205,
+   "pT_registry_conflict": 0,
+   "margin_recorded": 200,
+   "margin_positive": 66,
+   "margin_negative": 134,
+   "R_concordant_positive": 59,
+   "R_assessed_positive": 65,
+   "R_concordant_negative": 133,
+   "R_assessed_negative": 133,
+   "positive_with_length_field": 66,
+   "positive_with_length_value": 49,
+   "negative_with_length_field": 134,
+   "length_field_present": 205,
+   "margin_length_registry_conflict": 0
+  }
+ },
+ "margin_length_entry_by_period": {
+  "BE Versius 2021-2023": {
+   "positive_with_entry": [
+    20,
+    21
+   ],
+   "negative_with_entry": [
+    3,
+    104
+   ]
+  },
+  "BE Versius 2024": {
+   "positive_with_entry": [
+    27,
+    27
+   ],
+   "negative_with_entry": [
+    52,
+    52
+   ]
+  },
+  "BE da Vinci restart 2024": {
+   "positive_with_entry": [
+    9,
+    9
+   ],
+   "negative_with_entry": [
+    16,
+    16
+   ]
+  },
+  "BE da Vinci restart 2025-2026": {
+   "positive_with_entry": [
+    57,
+    57
+   ],
+   "negative_with_entry": [
+    118,
+    118
+   ]
+  },
+  "SM Versius 2021-2023": {
+   "positive_with_entry": [
+    37,
+    37
+   ],
+   "negative_with_entry": [
+    66,
+    66
+   ]
+  },
+  "SM Versius 2024": {
+   "positive_with_entry": [
+    4,
+    4
+   ],
+   "negative_with_entry": [
+    13,
+    13
+   ]
+  },
+  "SM Versius 2025-2026": {
+   "positive_with_entry": [
+    3,
+    3
+   ],
+   "negative_with_entry": [
+    1,
+    1
+   ]
+  },
+  "SM da Vinci restart 2024": {
+   "positive_with_entry": [
+    34,
+    34
+   ],
+   "negative_with_entry": [
+    44,
+    44
+   ]
+  },
+  "SM da Vinci restart 2025-2026": {
+   "positive_with_entry": [
+    27,
+    27
+   ],
+   "negative_with_entry": [
+    62,
+    62
+   ]
+  }
+ },
+ "first_case_start_clock_by_hospital_year": {
+  "BE 2022": {
+   "n_days": 29,
+   "median": "08:30",
+   "q1": "08:25",
+   "q3": "08:35"
+  },
+  "BE 2023": {
+   "n_days": 51,
+   "median": "08:25",
+   "q1": "07:55",
+   "q3": "08:30"
+  },
+  "BE 2024": {
+   "n_days": 68,
+   "median": "08:15",
+   "q1": "07:50",
+   "q3": "08:30"
+  },
+  "BE 2025": {
+   "n_days": 111,
+   "median": "08:25",
+   "q1": "08:20",
+   "q3": "08:30"
+  },
+  "BE 2026": {
+   "n_days": 10,
+   "median": "08:30",
+   "q1": "08:25",
+   "q3": "08:30"
+  },
+  "SM 2021": {
+   "n_days": 11,
+   "median": "09:45",
+   "q1": "09:20",
+   "q3": "09:55"
+  },
+  "SM 2022": {
+   "n_days": 23,
+   "median": "09:30",
+   "q1": "09:08",
+   "q3": "09:52"
+  },
+  "SM 2023": {
+   "n_days": 29,
+   "median": "09:25",
+   "q1": "09:15",
+   "q3": "09:45"
+  },
+  "SM 2024": {
+   "n_days": 39,
+   "median": "09:20",
+   "q1": "09:10",
+   "q3": "09:30"
+  },
+  "SM 2025": {
+   "n_days": 40,
+   "median": "09:28",
+   "q1": "08:45",
+   "q3": "10:02"
+  },
+  "SM 2026": {
+   "n_days": 8,
+   "median": "09:15",
+   "q1": "09:00",
+   "q3": "09:38"
+  }
+ },
+ "clock_concordance_by_hospital_year": {
+  "BE 2022": {
+   "concordant": 47,
+   "assessed": 48,
+   "median_or_time": 172.5
+  },
+  "BE 2023": {
+   "concordant": 73,
+   "assessed": 78,
+   "median_or_time": 185.0
+  },
+  "BE 2024": {
+   "concordant": 105,
+   "assessed": 105,
+   "median_or_time": 185.0
+  },
+  "BE 2025": {
+   "concordant": 169,
+   "assessed": 169,
+   "median_or_time": 170.0
+  },
+  "BE 2026": {
+   "concordant": 11,
+   "assessed": 11,
+   "median_or_time": 165.0
+  },
+  "SM 2021": {
+   "concordant": 15,
+   "assessed": 15,
+   "median_or_time": 240.0
+  },
+  "SM 2022": {
+   "concordant": 37,
+   "assessed": 37,
+   "median_or_time": 195.0
+  },
+  "SM 2023": {
+   "concordant": 70,
+   "assessed": 70,
+   "median_or_time": 125.0
+  },
+  "SM 2024": {
+   "concordant": 99,
+   "assessed": 99,
+   "median_or_time": 135.0
+  },
+  "SM 2025": {
+   "concordant": 82,
+   "assessed": 82,
+   "median_or_time": 150.0
+  },
+  "SM 2026": {
+   "concordant": 19,
+   "assessed": 19,
+   "median_or_time": 140.0
+  }
+ },
+ "psa_rule": {
+  "classified_patients": 314,
+  "recomputed_all_rule_agrees_with_release": 314,
+  "patients_with_two_or_more_values": {
+   "Versius": 39,
+   "da Vinci restart": 49
+  },
+  "not_persistent_under_all_rule_but_one_value_ge_0_1": {
+   "Versius": 0,
+   "da Vinci restart": 1
+  },
+  "persistent_by_series": {
+   "Versius": [
+    16,
+    143
+   ],
+   "da Vinci restart": [
+    16,
+    163
+   ]
+  }
+ },
+ "missingness": [
+  {
+   "Variable": "Age",
+   "Versius, observed": "337/337 (100%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Body mass index",
+   "Versius, observed": "282/337 (84%)",
+   "da Vinci restart, observed": "379/382 (99%)"
+  },
+  {
+   "Variable": "Preoperative PSA",
+   "Versius, observed": "337/337 (100%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Biopsy ISUP grade group",
+   "Versius, observed": "336/337 (100%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Specimen weight",
+   "Versius, observed": "331/337 (98%)",
+   "da Vinci restart, observed": "291/382 (76%)"
+  },
+  {
+   "Variable": "pT stage",
+   "Versius, observed": "336/337 (100%)",
+   "da Vinci restart, observed": "380/382 (99%)"
+  },
+  {
+   "Variable": "Final ISUP grade group",
+   "Versius, observed": "335/337 (99%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Nerve sparing",
+   "Versius, observed": "337/337 (100%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Lymph-node dissection",
+   "Versius, observed": "337/337 (100%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Operative time",
+   "Versius, observed": "335/337 (99%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Margin status",
+   "Versius, observed": "328/337 (97%)",
+   "da Vinci restart, observed": "367/382 (96%)"
+  },
+  {
+   "Variable": "Estimated blood loss",
+   "Versius, observed": "326/337 (97%)",
+   "da Vinci restart, observed": "372/382 (97%)"
+  },
+  {
+   "Variable": "Postoperative stay",
+   "Versius, observed": "337/337 (100%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Clavien-Dindo grade",
+   "Versius, observed": "292/337 (87%)",
+   "da Vinci restart, observed": "212/382 (55%)"
+  },
+  {
+   "Variable": "Reoperation",
+   "Versius, observed": "249/337 (74%)",
+   "da Vinci restart, observed": "382/382 (100%)"
+  },
+  {
+   "Variable": "Transfusion within 30 days",
+   "Versius, observed": "233/337 (69%)",
+   "da Vinci restart, observed": "229/382 (60%)"
+  },
+  {
+   "Variable": "Readmission within 30 days",
+   "Versius, observed": "238/337 (71%)",
+   "da Vinci restart, observed": "235/382 (62%)"
+  }
+ ],
+ "data_close": "2026-04-02",
+ "robot_start_months": {
+  "Versius SM": "2021-12",
+  "Versius BE": "2022-07",
+  "restart": "2024-01",
+  "da Vinci BE": "2024-12"
+ },
+ "robot_model_all_da_vinci": {
+  "da Vinci, generation not specified": 280,
+  "": 119,
+  "da Vinci X": 2
+ }
+}

@@ -22,8 +22,8 @@ load_ms6 <- function(WS, restart_at = 20L) {
   d$log_or <- log(d$or_time)
   d$dv_restart_n <- ifelse(d$platform == "da Vinci" & d$platform_n >= restart_at, d$platform_n - restart_at + 1, NA)
   days_open <- as.numeric(difftime(close, d$surgery_date, units = "days"))
-  d$elig_3m <- as.integer(days_open >= 120)
-  d$elig_12m <- as.integer(days_open >= 425)
+  d$elig_3m <- as.integer(days_open >= 137)  # the whole 46-137 day window has elapsed
+  d$elig_12m <- as.integer(days_open >= 456)  # the whole 320-456 day window has elapsed
   d$elig_psa56 <- as.integer(days_open >= 56)
   list(d = d, close = close, close_gap_days = as.numeric(difftime(close, max(raw$surgery_date), units = "days")))
 }

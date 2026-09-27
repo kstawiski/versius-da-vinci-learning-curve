@@ -31,7 +31,7 @@ def frac(p):
     v = p['point'].get('frac80'); lo, hi = p['ci95'].get('frac80', [None, None])
     return 'not applicable, no initial improvement' if v is None else f"case {v:.0f} (95% CI {f(lo)}–{f(hi)})"
 rows.append(('Post hoc, case by which 80% of the initial improvement was reached', frac(pv) + f", total improvement {f(pv['point']['improvement'])} min (95% CI {f(pv['ci95']['improvement'][0])}–{f(pv['ci95']['improvement'][1])})",
-             f"no initial learning phase, total improvement {f(pd_['point']['improvement'], 1)} min (95% CI {f(pd_['ci95']['improvement'][0])} to {f(pd_['ci95']['improvement'][1])})"))
+             f"not defined, because the whole-series curve at case 1 was only {f(pd_['point']['improvement'], 1)} min above its long-run level (95% CI {f(pd_['ci95']['improvement'][0])} to {f(pd_['ci95']['improvement'][1])}). This metric compares case 1 with the long-run level, whereas the first-50-case slope model showed an early decline of {-{t['term']: t for t in c['A3']['slopes_first50']}['slope_dvrestart_per10']['est']:.1f} min per 10 cases"))
 r = s['S_rcs']
 rows.append(('Restricted cubic splines instead of penalized spline', f"{f(r['Versius_or']['case1'])} min at case 1, {f(r['Versius_or']['case50'])} at case 50, {f(r['Versius_or']['case100'])} at case 100",
              f"{f(r['dVrestart_or']['case1'])} min at case 1, {f(r['dVrestart_or']['case50'])} at case 50"))
@@ -51,7 +51,7 @@ rows.append((f"Random order within {t['n_blocks']} unresolved tie blocks ({t['n_
 ca = c['A4']['calendar_adjusted']
 rows.append(('2024 comparison with a calendar-month spline', '–', f"operative time {f(ca['or_time']['estimate'], 1)} min (95% CI {f(ca['or_time']['ci95'][0], 1)} to {f(ca['or_time']['ci95'][1], 1)}), pT2 margin {f(ca['psm_pt2']['estimate'] * 100, 1)} points (95% CI {f(ca['psm_pt2']['ci95'][0] * 100, 1)} to {f(ca['psm_pt2']['ci95'][1] * 100, 1)})"))
 rows.append(('Mature phases with plateau cutoffs re-selected in each bootstrap replicate (1000 replicates)', '–',
-             f"plateaus reached on both robots in {b1['share_reached'] * 100:.0f}% of replicates. Among them, operative time 90% interval {f(b1['or_time']['p5'], 1)} to {f(b1['or_time']['p95'], 1)} min, pT2 margin 90% interval {f(b1['psm_pt2']['p5'] * 100, 1)} to {f(b1['psm_pt2']['p95'] * 100, 1)} points"))
+             f"plateaus reached on both robots in {b1['share_reached'] * 100:.0f}% of replicates. Among them, operative time 90% interval {f(b1['or_time']['p5'], 1)} to {f(b1['or_time']['p95'], 1)} min, within the ±15-min equivalence margin, and pT2 margin 90% interval {f(b1['psm_pt2']['p5'] * 100, 1)} to {f(b1['psm_pt2']['p95'] * 100, 1)} points, beyond the ±10-point margin"))
 fx = b1['posthoc_fixed_cutoff']
 rows.append(('Post hoc, Versius cases 47–337 against all restart cases', '–',
              f"operative time {f(fx['or_time']['estimate'], 1)} min (90% CI {f(fx['or_time']['ci90'][0], 1)} to {f(fx['or_time']['ci90'][1], 1)}), pT2 margin {f(fx['psm_pt2']['estimate'] * 100, 1)} points (90% CI {f(fx['psm_pt2']['ci90'][0] * 100, 1)} to {f(fx['psm_pt2']['ci90'][1] * 100, 1)})"))
@@ -60,6 +60,16 @@ for k, first in (('after_30', 31), ('after_43', 44)):
     x = cs[k]
     rows.append((f'Post hoc, Versius cases {first}–337 against all restart cases', '–',
                  f"operative time {f(x['or_time']['estimate'], 1)} min (90% CI {f(x['or_time']['ci90'][0], 1)} to {f(x['or_time']['ci90'][1], 1)}), pT2 margin {f(x['psm_pt2']['estimate'] * 100, 1)} points (90% CI {f(x['psm_pt2']['ci90'][0] * 100, 1)} to {f(x['psm_pt2']['ci90'][1] * 100, 1)})"))
+rv = json.load(open(R / 'R_revision_checks.json')); fi = rv['firth']
+a3 = c['A3']['a_psm_pt2']
+rows.append(('Post hoc, pT2 margin by Firth penalized logistic regression with the full adjustment set', '–',
+             f"first 100 operations {f(fi['first100']['rd'] * 100, 1)} points (95% CI {f(fi['first100']['ci95'][0] * 100, 1)} to {f(fi['first100']['ci95'][1] * 100, 1)}), against {f(a3['estimate'] * 100, 1)} (95% CI {f(a3['ci95'][0] * 100, 1)} to {f(a3['ci95'][1] * 100, 1)}) by ordinary logistic regression. "
+             f"Versius cases 47–337 against all restart cases {f(fi['after_learning_46']['rd'] * 100, 1)} points (95% CI {f(fi['after_learning_46']['ci95'][0] * 100, 1)} to {f(fi['after_learning_46']['ci95'][1] * 100, 1)})"))
+fb = rv['fixed_basis']; pg = json.load(open(R / 'S_pooled_smooth_tests.json'))
+def fbp(sr):
+    ps = [fb[f'{sr} psm_pt2 df{k}']['D1']['p'] for k in (3, 4, 5)]
+    return (f"P = {min(ps):.2f} to {max(ps):.2f} with 3 to 5 degrees of freedom (D1 rule), against P = {pg[sr + ' psm_pt2']['pooled']['p']:.2f} for the penalized spline (D2 rule)")
+rows.append(('Post hoc, test of the pT2 margin curve with fixed-basis natural splines, pooled across imputations', fbp('Versius'), fbp('dVrestart')))
 b3 = s['B3']
 rows.append(('Previous robotic case on the other robot within 7 days, 2024', '–', f"{int(b3['n_switch'])} of {int(b3['n_total'])} operations, {f(b3['est_min'], 1)} min (95% CI {f(b3['ci95'][0], 1)} to {f(b3['ci95'][1], 1)})"))
 cu = s['S_cusum']
