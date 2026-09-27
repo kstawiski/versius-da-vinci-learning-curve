@@ -116,10 +116,11 @@ need('R status', f"in {sum(x['R_concordant_positive'] for x in st)} of {sum(x['R
 import datetime as _dt
 dc = _dt.date.fromisoformat(ev['data_close']); need('data close', f"Data closed on {dc.day} {dc.strftime('%B')} {dc.year}")
 sm = ev['robot_start_months']; mon = lambda k: _dt.date.fromisoformat(sm[k] + '-01').strftime('%B %Y')
-need('robot months', f"used from {mon('Versius SM')} at SalveMedica and from {mon('Versius BE')} at Bełchatów, and da Vinci (Intuitive Surgical, Sunnyvale, CA, USA), used at SalveMedica and from {mon('da Vinci BE')} at Bełchatów")
+need('robot months', f"used from {mon('Versius SM')} at SalveMedica and from {mon('Versius BE')} at Bełchatów, and the da Vinci X (Intuitive Surgical, Sunnyvale, CA, USA), used at SalveMedica and from {mon('da Vinci BE')} at Bełchatów")
 need('restart month', f"da Vinci case 20 in {mon('restart')}")
 rm_ = ev['robot_model_all_da_vinci']; nx = rm_.get('da Vinci X', 0) + rm_.get('da Vinci Xi', 0) + rm_.get('da Vinci Si', 0)
-need('dV generation', f"named in {nx} of {sum(rm_.values())} operative notes, both at Bełchatów (da Vinci X)" if nx == rm_.get('da Vinci X', 0) == ev['strata']['Bełchatów da Vinci restart']['robot_model_generation_named'] else 'MISMATCH')
+need('dV model', "and the da Vinci X (Intuitive Surgical, Sunnyvale, CA, USA)")
+checks.append(('operative notes name no da Vinci model other than X', str(rm_), {k for k in rm_ if k not in ('', 'da Vinci, generation not specified')} == {'da Vinci X'}))
 pr = ev['psa_rule']['not_persistent_under_all_rule_but_one_value_ge_0_1']
 need('PSA rule', "Requiring every value rather than any value to reach 0.1 ng/mL classified one restart patient as not persistent" if (pr['da Vinci restart'] == 1 and pr['Versius'] == 0) else 'MISMATCH')
 bs = pd.read_csv(R / 'B4_outcomes_by_series.csv').set_index('series')
