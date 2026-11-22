@@ -1,6 +1,6 @@
 # Code and aggregate outputs
 
-From Versius to da Vinci: operative time and surgical margins in 738 single-surgeon prostatectomies. Version 1.1.7.
+From Versius to da Vinci: operative time and surgical margins in 738 single-surgeon prostatectomies. Version 1.1.8.
 
 The archive contains analysis code and aggregate outputs only. No patient-level rows, identifiers or source documents are included. The patient-level research database is restricted under institutional approval and cannot be shared.
 
@@ -16,6 +16,7 @@ The archive contains analysis code and aggregate outputs only. No patient-level 
   - `23_revision_checks.R`: Firth penalized pT2 margin contrasts, fixed-basis curve tests pooled by the D1 and D2 rules, the 2024 hospital-month comparison and operative-time comparisons within each hospital (Figure 2A).
   - `24_endpoint_verification.py`: agreement of the primary endpoints with independently recorded fields and observed values by variable.
   - `25_margin_r_status_sensitivity.R`: pT2 margin comparisons with discordant margins excluded or classified as negative.
+  - `26_retzius_sparing_sensitivity.R`: comparisons after the Versius learning phase without the restart operations documented as Retzius-sparing.
   - `05_*.R`: figures. `08`–`11` and `21`: tables. `12`–`14`, `16`, `17`, `19`, `20`, `22`: references, manuscript assembly, number binding, document build and technical audits.
 - `analysis/results/`: aggregate results written by the scripts (JSON and CSV).
 - `figures/source_data/`: aggregate data behind the figures.

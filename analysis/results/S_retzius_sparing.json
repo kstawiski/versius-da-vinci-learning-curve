@@ -1,0 +1,82 @@
+{
+  "label": "Post hoc sensitivity of the comparisons after the Versius learning phase to documented Retzius-sparing surgery",
+  "contrast": "da Vinci restart minus Versius",
+  "documented_retzius_sparing": {
+    "operations": 39,
+    "SalveMedica": 35,
+    "Belchatow": 4,
+    "first_restart_case": 120,
+    "after_restart_case_250": 38,
+    "in_first100_comparison": 0,
+    "in_2024_comparison": 0,
+    "in_comparison_after_learning": 39,
+    "pT2_margin": {
+      "positive": 8,
+      "total": 18
+    },
+    "pT2_margin_other_restart": {
+      "positive": 61,
+      "total": 213
+    }
+  },
+  "pT2_margin_after_learning": {
+    "as_recorded": {
+      "estimate_pp": 9.838573,
+      "ci95_pp": [1.254636, 18.42251],
+      "crude": {
+        "Versius": {
+          "positive": 29,
+          "total": 156
+        },
+        "da_vinci_restart": {
+          "positive": 69,
+          "total": 231
+        }
+      }
+    },
+    "retzius_sparing_excluded": {
+      "estimate_pp": 8.738208,
+      "ci95_pp": [0.079919, 17.396498],
+      "crude": {
+        "Versius": {
+          "positive": 29,
+          "total": 156
+        },
+        "da_vinci_restart": {
+          "positive": 61,
+          "total": 213
+        }
+      }
+    }
+  },
+  "operative_time_after_learning": {
+    "SM": {
+      "as_recorded": {
+        "estimate_min": 11.68746,
+        "ci95_min": [4.034237, 19.340683],
+        "n_Versius": 110,
+        "n_da_vinci_restart": 177
+      },
+      "retzius_sparing_excluded": {
+        "estimate_min": 10.173115,
+        "ci95_min": [2.046026, 18.300205],
+        "n_Versius": 110,
+        "n_da_vinci_restart": 142
+      }
+    },
+    "BE": {
+      "as_recorded": {
+        "estimate_min": -11.602017,
+        "ci95_min": [-19.976756, -3.227278],
+        "n_Versius": 181,
+        "n_da_vinci_restart": 205
+      },
+      "retzius_sparing_excluded": {
+        "estimate_min": -11.24396,
+        "ci95_min": [-19.596754, -2.891166],
+        "n_Versius": 181,
+        "n_da_vinci_restart": 201
+      }
+    }
+  }
+}
