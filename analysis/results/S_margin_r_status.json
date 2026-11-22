@@ -1,0 +1,201 @@
+{
+  "label": "Post hoc sensitivity of pT2 positive margin differences to discordance with pathological R status",
+  "contrast": "da Vinci restart minus Versius",
+  "discordant_counts_basis": "Operations with a discordant positive margin before exclusion or recoding",
+  "discordant_by_hospital_and_series": [
+    {
+      "hospital": "SM",
+      "series": "Versius",
+      "all_stages": 0,
+      "pT2": 0
+    },
+    {
+      "hospital": "BE",
+      "series": "Versius",
+      "all_stages": 2,
+      "pT2": 0
+    },
+    {
+      "hospital": "SM",
+      "series": "da Vinci restart",
+      "all_stages": 1,
+      "pT2": 0
+    },
+    {
+      "hospital": "BE",
+      "series": "da Vinci restart",
+      "all_stages": 6,
+      "pT2": 3
+    }
+  ],
+  "comparisons": {
+    "first100": {
+      "as_recorded": {
+        "estimate_pp": 20.840767,
+        "ci95_pp": [2.104289, 39.577245],
+        "crude": {
+          "Versius": {
+            "positive": 11,
+            "total": 49
+          },
+          "da_vinci_restart": {
+            "positive": 23,
+            "total": 59
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 0
+        }
+      },
+      "discordant_excluded": {
+        "estimate_pp": 20.840767,
+        "ci95_pp": [2.104289, 39.577245],
+        "crude": {
+          "Versius": {
+            "positive": 11,
+            "total": 49
+          },
+          "da_vinci_restart": {
+            "positive": 23,
+            "total": 59
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 0
+        }
+      },
+      "discordant_recoded_negative": {
+        "estimate_pp": 20.840767,
+        "ci95_pp": [2.104289, 39.577245],
+        "crude": {
+          "Versius": {
+            "positive": 11,
+            "total": 49
+          },
+          "da_vinci_restart": {
+            "positive": 23,
+            "total": 59
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 0
+        }
+      }
+    },
+    "y2024": {
+      "as_recorded": {
+        "estimate_pp": 8.382161,
+        "ci95_pp": [-11.443576, 28.207899],
+        "crude": {
+          "Versius": {
+            "positive": 14,
+            "total": 48
+          },
+          "da_vinci_restart": {
+            "positive": 23,
+            "total": 61
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 0
+        }
+      },
+      "discordant_excluded": {
+        "estimate_pp": 8.382161,
+        "ci95_pp": [-11.443576, 28.207899],
+        "crude": {
+          "Versius": {
+            "positive": 14,
+            "total": 48
+          },
+          "da_vinci_restart": {
+            "positive": 23,
+            "total": 61
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 0
+        }
+      },
+      "discordant_recoded_negative": {
+        "estimate_pp": 8.382161,
+        "ci95_pp": [-11.443576, 28.207899],
+        "crude": {
+          "Versius": {
+            "positive": 14,
+            "total": 48
+          },
+          "da_vinci_restart": {
+            "positive": 23,
+            "total": 61
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 0
+        }
+      }
+    },
+    "after_learning_46": {
+      "as_recorded": {
+        "estimate_pp": 9.838573,
+        "ci95_pp": [1.254636, 18.42251],
+        "crude": {
+          "Versius": {
+            "positive": 29,
+            "total": 156
+          },
+          "da_vinci_restart": {
+            "positive": 69,
+            "total": 231
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 3
+        }
+      },
+      "discordant_excluded": {
+        "estimate_pp": 8.629599,
+        "ci95_pp": [0.062674, 17.196524],
+        "crude": {
+          "Versius": {
+            "positive": 29,
+            "total": 156
+          },
+          "da_vinci_restart": {
+            "positive": 66,
+            "total": 228
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 3
+        }
+      },
+      "discordant_recoded_negative": {
+        "estimate_pp": 8.240213,
+        "ci95_pp": [-0.264043, 16.744468],
+        "crude": {
+          "Versius": {
+            "positive": 29,
+            "total": 156
+          },
+          "da_vinci_restart": {
+            "positive": 66,
+            "total": 231
+          }
+        },
+        "discordant_in_comparison_pT2": {
+          "Versius": 0,
+          "da_vinci_restart": 3
+        }
+      }
+    }
+  }
+}

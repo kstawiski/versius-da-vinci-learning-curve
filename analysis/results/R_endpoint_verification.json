@@ -360,6 +360,38 @@
     16,
     163
    ]
+  },
+  "persistent_in_release_by_series": {
+   "Versius": [
+    16,
+    144
+   ],
+   "da Vinci restart": [
+    16,
+    164
+   ]
+  },
+  "classified_with_values_in_audit_by_series": {
+   "Versius": 143,
+   "da Vinci restart": 163
+  },
+  "classified_without_audited_values": {
+   "Versius": {
+    "total": 1,
+    "no_psa_long_row": 0,
+    "psa_long_rows_but_none_on_days_28_to_56": 0,
+    "rows_on_days_28_to_56_but_none_eligible": 1
+   },
+   "da Vinci restart": {
+    "total": 1,
+    "no_psa_long_row": 0,
+    "psa_long_rows_but_none_on_days_28_to_56": 0,
+    "rows_on_days_28_to_56_but_none_eligible": 1
+   }
+  },
+  "classified_in_audit_outside_table_followup_by_series": {
+   "Versius": 0,
+   "da Vinci restart": 0
   }
  },
  "missingness": [

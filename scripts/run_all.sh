@@ -12,6 +12,7 @@ Rscript scripts/03d_cutoff_sensitivity.R
 Rscript scripts/03e_pooled_smooth_tests.R
 Rscript scripts/03f_overlap_2024.R
 Rscript scripts/23_revision_checks.R
+Rscript scripts/25_margin_r_status_sensitivity.R
 MS6_MIMP=20 MS6_NCORE=${MS6_NCORE:-16} MS6_NSEGBOOT=${MS6_NSEGBOOT:-500} MS6_NPERM=${MS6_NPERM:-200} Rscript scripts/04_secondary.R
 Rscript scripts/04b_davies.R
 MS6_NBOOT_PH=${MS6_NBOOT_PH:-1000} MS6_NCORE=${MS6_NCORE:-16} Rscript scripts/06_posthoc_learning_metrics.R

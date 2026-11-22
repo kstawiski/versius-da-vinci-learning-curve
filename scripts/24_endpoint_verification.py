@@ -111,7 +111,10 @@ res['clock_concordance_by_hospital_year'] = conc
 # EAU PSA persistence: dependence on the every-value rule
 p = pd.read_parquet(REL / 'psa_long.parquet', columns=['master_patient_id', 'days_from_surgery', 'comparator', 'endpoint_use_decision',
                                                      'psa_point_value_ng_ml', 'psa_upper_bound_ng_ml'])
-p = p[p.master_patient_id.isin(set(r.pid)) & p.days_from_surgery.between(28, 56)]
+p = p[p.master_patient_id.isin(set(r.pid))]
+psa_long_ids = set(p.master_patient_id)
+p = p[p.days_from_surgery.between(28, 56)]
+psa_window_ids = set(p.master_patient_id)
 p = p[p.endpoint_use_decision.astype(str).str.contains('eligible_for')]
 cmpv = p.comparator.astype(str).str.strip()
 point = pd.to_numeric(p.psa_point_value_ng_ml, errors='coerce').astype(float).to_numpy(); ub = pd.to_numeric(p.psa_upper_bound_ng_ml, errors='coerce').astype(float).to_numpy()
@@ -128,6 +131,31 @@ res['psa_rule'] = {
     'not_persistent_under_all_rule_but_one_value_ge_0_1': {s: int(((agg.series == s) & agg.any_ge & ~agg.all_ge.astype(bool) & (agg.psa_persistence_eau == 0)).sum())
                                                            for s in ['Versius', 'da Vinci restart']},
     'persistent_by_series': {s: [int(agg[(agg.series == s)].psa_persistence_eau.sum()), int((agg.series == s).sum())] for s in ['Versius', 'da Vinci restart']}}
+
+# Apply the PSA outcome table's follow-up rule to the release classifications.
+close = (d.surgery_date + pd.to_timedelta(d.fu_months_contact * 30.4375, unit='D')).max()
+release_classified = r[((close - r.surgery_date).dt.days >= 56) & r.psa_persistence_eau.notna()]
+audited_ids = set(agg.index)
+psa_rule = res['psa_rule']
+psa_rule['persistent_in_release_by_series'] = {}
+psa_rule['classified_with_values_in_audit_by_series'] = {}
+psa_rule['classified_without_audited_values'] = {}
+psa_rule['classified_in_audit_outside_table_followup_by_series'] = {}
+for s, (_, audit_n) in psa_rule['persistent_by_series'].items():
+    g = release_classified[release_classified.series == s]
+    missing = g.loc[~g.pid.isin(audited_ids), 'pid']
+    has_long_row = missing.isin(psa_long_ids)
+    in_window = missing.isin(psa_window_ids)
+    psa_rule['persistent_in_release_by_series'][s] = [int(g.psa_persistence_eau.sum()), len(g)]
+    psa_rule['classified_with_values_in_audit_by_series'][s] = audit_n
+    psa_rule['classified_without_audited_values'][s] = {
+        'total': len(missing),
+        'no_psa_long_row': int((~has_long_row).sum()),
+        'psa_long_rows_but_none_on_days_28_to_56': int((has_long_row & ~in_window).sum()),
+        'rows_on_days_28_to_56_but_none_eligible': int(in_window.sum()),
+    }
+    psa_rule['classified_in_audit_outside_table_followup_by_series'][s] = int(
+        ((agg.series == s) & ~agg.index.isin(g.pid)).sum())
 
 # missingness by variable and series (observed values)
 mv = [('Age', 'age'), ('Body mass index', 'bmi'), ('Preoperative PSA', 'psa'), ('Biopsy ISUP grade group', 'biopsy_isup'),
