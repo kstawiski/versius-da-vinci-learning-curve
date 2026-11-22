@@ -30,6 +30,8 @@ out <- list(label = "Post hoc sensitivity of the comparisons after the Versius l
             documented_retzius_sparing = list(
               operations = sum(rs), SalveMedica = sum(rs & d$centre %in% "SM"), Belchatow = sum(rs & d$centre %in% "BE"),
               first_restart_case = min(d$dv_restart_n[rs]), after_restart_case_250 = sum(rs & d$dv_restart_n > 250),
+              from_october_2025 = sum(rs & as.Date(d$surgery_date) >= as.Date("2025-10-01")),
+              restart_from_october_2025 = sum(restart & as.Date(d$surgery_date) >= as.Date("2025-10-01")),
               in_first100_comparison = sum(rs & G$first100(d) %in% "cmp"), in_2024_comparison = sum(rs & G$y2024(d) %in% "cmp"),
               in_comparison_after_learning = sum(rs & G$after_learning_46(d) %in% "cmp"),
               pT2_margin = frac(rs & pt2(d)), pT2_margin_other_restart = frac(restart & !rs & pt2(d))))
