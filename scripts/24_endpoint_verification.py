@@ -115,7 +115,8 @@ p = p[p.master_patient_id.isin(set(r.pid))]
 psa_long_ids = set(p.master_patient_id)
 p = p[p.days_from_surgery.between(28, 56)]
 psa_window_ids = set(p.master_patient_id)
-p = p[p.endpoint_use_decision.astype(str).str.contains('eligible_for')]
+use = p.endpoint_use_decision.astype(str)
+p = p[use.str.contains('eligible_for') & ~use.str.startswith(('held_', 'excluded_'))]
 cmpv = p.comparator.astype(str).str.strip()
 point = pd.to_numeric(p.psa_point_value_ng_ml, errors='coerce').astype(float).to_numpy(); ub = pd.to_numeric(p.psa_upper_bound_ng_ml, errors='coerce').astype(float).to_numpy()
 cmpv = cmpv.to_numpy()

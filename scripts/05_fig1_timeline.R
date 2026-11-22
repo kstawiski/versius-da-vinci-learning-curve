@@ -21,7 +21,7 @@ restart_q <- as.Date(cut(as.Date(min(raw$surgery_date[raw$platform == "da Vinci"
 pB <- ggplot(cq, aes(as.Date(q) + 91, cum, colour = platform, linetype = platform)) +
   annotate("rect", xmin = as.Date("2024-01-01"), xmax = as.Date("2025-01-01"), ymin = -Inf, ymax = Inf, fill = "#eeeeee") +
   annotate("text", x = as.Date("2024-07-01"), y = 420, label = "Both robots\nin use (2024)", size = 2.3, colour = "#3b3b3b", lineheight = 0.9) +
-  geom_step(linewidth = 0.7, direction = "vh") +
+  geom_step(linewidth = 0.7, direction = "hv") +
   geom_text(data = ends, aes(x = as.Date("2026-04-29"), label = paste0(platform, " (", cum, ")")), hjust = 0, size = 2.4, show.legend = FALSE, family = "Open Sans") +
   scale_colour_manual(values = PAL_PLATFORM, name = NULL) +
   scale_linetype_manual(values = c("Versius" = "solid", "da Vinci" = "solid", "Laparoscopic" = "22"), name = NULL) +

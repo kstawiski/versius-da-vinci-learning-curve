@@ -11,7 +11,7 @@ source(file.path(WS, "scripts/fig_style.R"))
 # every estimate comes from the authoritative contrast table (full model, Firth under the sparse rule, or crude)
 ac <- read.csv(file.path(WS, "analysis/results/authoritative_contrasts.csv"), stringsAsFactors = FALSE)
 CMP <- c(init = "First 100 cases on each robot", c2024 = "Calendar year 2024", mature = "After the Versius learning phase (post hoc)")
-CMP_LABELS <- setNames(c("First 100 operations on each robot", "Calendar year 2024 (primary comparison)",
+CMP_LABELS <- setNames(c("First 100 Versius and first 100 restart operations", "Calendar year 2024 (primary comparison)",
                         "After the Versius learning phase (post hoc)"), CMP)
 BLK <- c("A3a initial phase" = CMP[["init"]], "A4 concurrent 2024" = CMP[["c2024"]], "B1f post hoc, after the Versius learning phase" = CMP[["mature"]])
 OUT <- c(or_time = "Operative time", psm_pt2 = "Positive margin, pT2", psm_all = "Positive margin, all stages",

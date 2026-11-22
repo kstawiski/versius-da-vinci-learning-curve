@@ -345,7 +345,7 @@
   "recomputed_all_rule_agrees_with_release": 314,
   "patients_with_two_or_more_values": {
    "Versius": 39,
-   "da Vinci restart": 49
+   "da Vinci restart": 48
   },
   "not_persistent_under_all_rule_but_one_value_ge_0_1": {
    "Versius": 0,
