@@ -19,7 +19,32 @@
     "pT2_margin_other_restart": {
       "positive": 61,
       "total": 213
-    }
+    },
+    "pT2_margin_by_hospital": {
+      "SM": {
+        "documented": {
+          "positive": 4,
+          "total": 14
+        },
+        "other_restart": {
+          "positive": 26,
+          "total": 80
+        }
+      },
+      "BE": {
+        "documented": {
+          "positive": 4,
+          "total": 4
+        },
+        "other_restart": {
+          "positive": 35,
+          "total": 133
+        }
+      }
+    },
+    "from_october_2025_in_first100_comparison": 0,
+    "from_october_2025_in_2024_comparison": 0,
+    "versius_from_october_2025": 0
   },
   "pT2_margin_after_learning": {
     "as_recorded": {
@@ -49,6 +74,20 @@
           "total": 213
         }
       }
+    },
+    "restart_from_october_2025_excluded": {
+      "estimate_pp": 9.880552,
+      "ci95_pp": [1.126592, 18.634511],
+      "crude": {
+        "Versius": {
+          "positive": 29,
+          "total": 156
+        },
+        "da_vinci_restart": {
+          "positive": 61,
+          "total": 206
+        }
+      }
     }
   },
   "operative_time_after_learning": {
@@ -64,6 +103,12 @@
         "ci95_min": [2.046026, 18.300205],
         "n_Versius": 110,
         "n_da_vinci_restart": 142
+      },
+      "restart_from_october_2025_excluded": {
+        "estimate_min": 10.011423,
+        "ci95_min": [1.599736, 18.42311],
+        "n_Versius": 110,
+        "n_da_vinci_restart": 133
       }
     },
     "BE": {
@@ -78,6 +123,12 @@
         "ci95_min": [-19.596754, -2.891166],
         "n_Versius": 181,
         "n_da_vinci_restart": 201
+      },
+      "restart_from_october_2025_excluded": {
+        "estimate_min": -10.054085,
+        "ci95_min": [-18.44716, -1.66101],
+        "n_Versius": 181,
+        "n_da_vinci_restart": 194
       }
     }
   }
